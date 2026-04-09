@@ -6,6 +6,7 @@ import VideoSection from "@/components/landing/VideoSection";
 import ClinicSection from "@/components/landing/ClinicSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ReviewsSection from "@/components/landing/ReviewsSection";
+import FAQSection from "@/components/landing/FAQSection";
 import BookingSection from "@/components/landing/BookingSection";
 import GoogleMapSection from "@/components/landing/GoogleMapSection";
 import FloatingCTA from "@/components/landing/FloatingCTA";
@@ -22,6 +23,7 @@ const Index = () => {
       <ClinicSection />
       <TestimonialsSection />
       <ReviewsSection />
+      <FAQSection />
       <BookingSection />
       <GoogleMapSection />
       <Footer />
@@ -31,3 +33,4 @@ const Index = () => {
 };
 
 export default Index;
+
