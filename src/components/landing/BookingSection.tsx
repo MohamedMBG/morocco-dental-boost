@@ -130,11 +130,11 @@ const BookingSection = () => {
                 id="booking-submit"
                 type="submit"
                 size="lg"
-                className="w-full h-14 text-base font-heading font-bold shadow-cta gap-2"
+                className="w-full min-h-14 h-auto py-3 text-sm md:text-base font-heading font-bold shadow-cta gap-2 whitespace-normal text-center leading-snug"
                 aria-label="Confirmer le rendez-vous via WhatsApp"
               >
-                <Send className="w-5 h-5" />
-                Confirmer ma consultation gratuite →
+                <Send className="w-4 h-4 flex-shrink-0" />
+                Confirmer ma consultation gratuite
               </Button>
 
               <div className="text-center">
@@ -145,7 +145,7 @@ const BookingSection = () => {
                 id="booking-whatsapp-direct"
                 type="button"
                 size="lg"
-                className="w-full h-14 text-base bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground font-heading font-bold gap-2"
+                className="w-full min-h-14 h-auto py-3 text-sm md:text-base bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground font-heading font-bold gap-2 whitespace-normal text-center leading-snug"
                 asChild
               >
                 <a
@@ -154,8 +154,8 @@ const BookingSection = () => {
                   rel="noopener noreferrer"
                   aria-label="Réserver via WhatsApp maintenant"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  Réserver via WhatsApp maintenant
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  Réserver via WhatsApp
                 </a>
               </Button>
             </form>
