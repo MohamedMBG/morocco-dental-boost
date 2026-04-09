@@ -2,9 +2,12 @@ import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
 import TrustBar from "@/components/landing/TrustBar";
 import ServicesSection from "@/components/landing/ServicesSection";
+import VideoSection from "@/components/landing/VideoSection";
 import ClinicSection from "@/components/landing/ClinicSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import ReviewsSection from "@/components/landing/ReviewsSection";
 import BookingSection from "@/components/landing/BookingSection";
+import GoogleMapSection from "@/components/landing/GoogleMapSection";
 import FloatingCTA from "@/components/landing/FloatingCTA";
 import Footer from "@/components/landing/Footer";
 
@@ -15,9 +18,12 @@ const Index = () => {
       <HeroSection />
       <TrustBar />
       <ServicesSection />
+      <VideoSection />
       <ClinicSection />
       <TestimonialsSection />
+      <ReviewsSection />
       <BookingSection />
+      <GoogleMapSection />
       <Footer />
       <FloatingCTA />
     </div>
