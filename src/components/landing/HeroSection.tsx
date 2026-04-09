@@ -1,4 +1,4 @@
-import { Check, Phone, MessageCircle, Star } from "lucide-react";
+import { Check, Phone, MessageCircle, Star, Flame, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import doctorImg from "@/assets/doctor-portrait.jpg";
@@ -20,8 +20,8 @@ const HeroSection = () => {
           >
             {/* Urgency / scarcity badge */}
             <div className="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-sm font-semibold text-red-600">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              🔥 3 créneaux gratuits restants cette semaine
+              <Flame className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              3 créneaux gratuits restants cette semaine
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
@@ -75,7 +75,8 @@ const HeroSection = () => {
                 }
                 aria-label="Prendre un rendez-vous gratuit à DentaCare Rabat"
               >
-                📅 Consultation Gratuite
+                <CalendarDays className="w-4 h-4" aria-hidden="true" />
+                Consultation Gratuite
               </Button>
               <Button
                 id="hero-cta-phone"

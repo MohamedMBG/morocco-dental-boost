@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const faqs = [
@@ -119,7 +119,8 @@ const FAQSection = () => {
               }
               aria-label="Prendre rendez-vous à la clinique dentaire DentaCare Rabat"
             >
-              📅 Prendre RDV — Consultation gratuite
+              <CalendarDays className="w-4 h-4" aria-hidden="true" />
+              Prendre RDV — Consultation gratuite
             </Button>
           </div>
         </div>

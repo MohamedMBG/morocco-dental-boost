@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Send, Clock, Shield, Users } from "lucide-react";
+import { MessageCircle, Send, Clock, Shield, Users, Flame, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -44,14 +44,15 @@ const BookingSection = () => {
           >
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-sm font-semibold text-red-600 mb-4">
-                <Clock className="w-4 h-4" />
-                🔥 Places limitées — Consultation gratuite jusqu'à fin de semaine
+                <Flame className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                Places limitées — Consultation gratuite jusqu'à fin de semaine
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-foreground">
                 Réservez votre consultation gratuite
               </h2>
               <p className="text-muted-foreground mt-2">
-                ⚡ Réponse garantie en moins de <strong>30 minutes</strong> via WhatsApp
+                <Zap className="inline-block w-4 h-4 mr-1 text-primary" aria-hidden="true" />
+                Réponse garantie en moins de <strong>30 minutes</strong> via WhatsApp
               </p>
 
               {/* Mini social proof */}
@@ -61,7 +62,10 @@ const BookingSection = () => {
                   <strong className="text-foreground">+1 200</strong> patients traités
                 </span>
                 <span aria-hidden>•</span>
-                <span>⭐ 4.9/5 sur Google</span>
+                <span className="flex items-center gap-1.5">
+                  <Star className="w-4 h-4 text-gold fill-gold" aria-hidden="true" />
+                  4.9/5 sur Google
+                </span>
               </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, Shield, Smile, Zap, HeartPulse, ScanFace } from "lucide-react";
+import { Sparkles, Shield, Smile, Zap, HeartPulse, ScanFace, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -94,7 +94,8 @@ const ServicesSection = () => {
             }
             aria-label="Réserver une consultation dentaire gratuite à Rabat"
           >
-            🎁 Réserver ma consultation gratuite
+            <Gift className="w-4 h-4" aria-hidden="true" />
+            Réserver ma consultation gratuite
           </Button>
         </div>
       </div>
