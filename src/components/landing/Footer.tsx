@@ -38,14 +38,14 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              <a href="tel:+212600000000" className="transition-colors hover:text-trust-foreground">
-                +212 6 00 00 00 00
+              <a href="tel:+212631581901" className="transition-colors hover:text-trust-foreground">
+                +212 631-581901
               </a>
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <MessageCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <a
-                href="https://wa.me/212600000000"
+                href="https://wa.me/212631581901"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-trust-foreground"

@@ -9,7 +9,7 @@ const FloatingCTA = () => {
         size="lg"
         asChild
       >
-        <a href="tel:+212600000000" aria-label="Appeler le docteur maintenant">
+        <a href="tel:+212631581901" aria-label="Appeler le docteur maintenant">
           <Phone className="h-4 w-4" />
           Appeler nous
         </a>

@@ -42,7 +42,7 @@ const BookingSection = () => {
     const dayPart = preferredDay ? ` (jour prefere : ${preferredDay})` : "";
     const message = `Bonjour, je suis ${name.trim()}. Je souhaite prendre RDV${servicePart}${dayPart}. Mon numero : ${phone.trim()}`;
 
-    window.open(`https://wa.me/212600000000?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/212631581901?text=${encodeURIComponent(message)}`, "_blank");
     toast.success("Redirection vers WhatsApp - reponse en moins de 30 min !");
   };
 
@@ -176,7 +176,7 @@ const BookingSection = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
+                  href="https://wa.me/212631581901?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Prendre RDV par WhatsApp maintenant"

@@ -13,7 +13,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="tel:+212600000000" className="hidden sm:flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <a href="tel:+212631581901" className="hidden sm:flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             <Phone className="w-4 h-4" />
             +212 6 00 00 00 00
           </a>

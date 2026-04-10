@@ -83,7 +83,7 @@ const HeroSection = () => {
                 className="w-full gap-2 border-primary/30 font-semibold text-primary hover:bg-primary/5 sm:w-auto"
                 asChild
               >
-                <a href="tel:+212600000000" aria-label="Prendre RDV par appel avec DentaCare Rabat">
+                <a href="tel:+212631581901" aria-label="Prendre RDV par appel avec DentaCare Rabat">
                   <Phone className="h-4 w-4" />
                   Prendre RDV par appel
                 </a>
@@ -96,7 +96,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
+                  href="https://wa.me/212631581901?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Prendre RDV sur WhatsApp avec DentaCare Rabat"

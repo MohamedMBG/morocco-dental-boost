@@ -77,8 +77,8 @@ const GoogleMapSection = () => {
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Contact</h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    <a href="tel:+212600000000" className="transition-colors hover:text-primary">
-                      +212 6 00 00 00 00
+                    <a href="tel:+212631581901" className="transition-colors hover:text-primary">
+                      +212 631-581901
                     </a>
                   </p>
                 </div>
