@@ -5,34 +5,34 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    question: "Combien coûte un blanchiment dentaire à Rabat ?",
+    question: "Combien coute un blanchiment dentaire a Rabat ?",
     answer:
-      "Le prix d'un blanchiment dentaire laser à DentaCare Rabat dépend du traitement choisi (blanchiment laser en cabinet ou gouttières personnalisées). Contactez-nous pour un devis gratuit et personnalisé — réponse en moins de 30 min via WhatsApp.",
+      "Le prix d'un blanchiment dentaire laser a DentaCare Rabat depend du traitement choisi. Contactez-nous pour une estimation personnalisee et une reponse en moins de 30 min via WhatsApp.",
   },
   {
-    question: "Proposez-vous des consultations gratuites ?",
+    question: "Comment prendre RDV ?",
     answer:
-      "Oui ! Cette semaine, nous offrons une consultation initiale 100% gratuite et sans engagement. Remplissez le formulaire ci-dessus ou envoyez-nous un message WhatsApp — nous vous répondons en moins de 30 minutes.",
+      "Remplissez le formulaire de reservation ou envoyez-nous un message WhatsApp. Nous vous repondons en moins de 30 minutes pour confirmer votre jour de preference.",
   },
   {
-    question: "Faites-vous des implants dentaires à Rabat ?",
+    question: "Faites-vous des implants dentaires a Rabat ?",
     answer:
-      "Absolument. Nous sommes spécialisés dans la pose d'implants dentaires en titane biocompatible. Les implants sont la solution la plus durable pour remplacer une dent manquante, avec un résultat naturel et une durée de vie de plus de 20 ans.",
+      "Absolument. Nous sommes specialises dans la pose d'implants dentaires en titane biocompatible. Les implants sont une solution durable pour remplacer une dent manquante, avec un resultat naturel et une duree de vie de plus de 20 ans.",
   },
   {
-    question: "Êtes-vous disponibles pour les urgences dentaires ?",
+    question: "Etes-vous disponibles pour les urgences dentaires ?",
     answer:
-      "Oui, nous prenons en charge les urgences dentaires 6 jours sur 7, de 8h à 20h. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immédiatement via WhatsApp pour une prise en charge prioritaire.",
+      "Oui, nous prenons en charge les urgences dentaires 6 jours sur 7, de 8h a 20h. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immediatement via WhatsApp pour une prise en charge prioritaire.",
   },
   {
-    question: "Proposez-vous l'Invisalign (orthodontie invisible) à Rabat ?",
+    question: "Proposez-vous l'Invisalign (orthodontie invisible) a Rabat ?",
     answer:
-      "Oui, DentaCare Rabat est partenaire Invisalign®. Les aligneurs invisibles corrigent votre sourire discrètement, sans les désagréments des bagues métalliques. Une consultation gratuite permet d'évaluer si vous êtes candidat.",
+      "Oui, DentaCare Rabat est partenaire Invisalign. Les aligneurs invisibles corrigent votre sourire discretement, sans les desagrements des bagues metalliques. Un premier diagnostic permet d'evaluer si vous etes candidat.",
   },
   {
-    question: "Quel est l'adresse et les horaires de la clinique ?",
+    question: "Quelle est l'adresse et les horaires de la clinique ?",
     answer:
-      "Notre clinique est située au 123 Avenue Mohammed V, Rabat (centre-ville). Nous sommes ouverts du lundi au vendredi de 8h à 20h, et le samedi de 8h à 18h. Parking à proximité disponible.",
+      "Notre clinique est situee au 123 Avenue Mohammed V, Rabat. Nous sommes ouverts du lundi au vendredi de 8h a 20h, et le samedi de 8h a 18h. Parking a proximite disponible.",
   },
 ];
 
@@ -43,41 +43,41 @@ const FAQSection = () => {
 
   return (
     <section
-      className="py-16 md:py-24 bg-background"
+      className="bg-background py-16 md:py-24"
       id="faq"
-      aria-label="Questions fréquentes — DentaCare Rabat"
+      aria-label="Questions frequentes - DentaCare Rabat"
     >
       <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-foreground">
-              Questions fréquentes
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
+              Questions frequentes
             </h2>
-            <p className="text-muted-foreground mt-3">
-              Tout ce que vous devez savoir avant votre première visite à DentaCare Rabat.
+            <p className="mt-3 text-muted-foreground">
+              Tout ce que vous devez savoir avant votre premiere visite a DentaCare Rabat.
             </p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <motion.div
-                key={i}
+                key={faq.question}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="bg-card border border-border rounded-xl overflow-hidden"
+                className="overflow-hidden rounded-xl border border-border bg-card"
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between p-5 text-left font-heading font-semibold text-foreground hover:bg-primary/5 transition-colors"
+                  className="flex w-full items-center justify-between p-5 text-left font-heading font-semibold text-foreground transition-colors hover:bg-primary/5"
                   aria-expanded={openIndex === i}
                   aria-controls={`faq-answer-${i}`}
                   id={`faq-question-${i}`}
                 >
                   <span className="pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 flex-shrink-0 text-primary transition-transform duration-200 ${
+                    className={`h-5 w-5 flex-shrink-0 text-primary transition-transform duration-200 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                     aria-hidden="true"
@@ -96,7 +96,7 @@ const FAQSection = () => {
                       transition={{ duration: 0.2, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
+                      <p className="border-t border-border px-5 pb-5 pt-4 text-sm leading-relaxed text-muted-foreground">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -106,21 +106,21 @@ const FAQSection = () => {
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <p className="text-muted-foreground text-sm mb-4">
+          <div className="mt-10 text-center">
+            <p className="mb-4 text-sm text-muted-foreground">
               Vous avez d'autres questions ? Contactez-nous directement.
             </p>
             <Button
               id="faq-cta"
               size="lg"
-              className="shadow-cta font-heading font-bold"
+              className="font-heading font-bold shadow-cta"
               onClick={() =>
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
               }
-              aria-label="Prendre rendez-vous à la clinique dentaire DentaCare Rabat"
+              aria-label="Prendre RDV a la clinique dentaire DentaCare Rabat"
             >
-              <CalendarDays className="w-4 h-4" aria-hidden="true" />
-              Prendre RDV — Consultation gratuite
+              <CalendarDays className="h-4 w-4" aria-hidden="true" />
+              Prendre RDV
             </Button>
           </div>
         </div>

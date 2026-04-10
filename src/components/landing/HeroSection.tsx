@@ -6,110 +6,108 @@ import doctorImg from "@/assets/doctor-portrait.jpg";
 const HeroSection = () => {
   return (
     <section
-      className="relative pt-16 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10"
-      aria-label="Section principale — Clinique DentaCare Rabat"
+      className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 pt-16"
+      aria-label="Section principale - Clinique DentaCare Rabat"
     >
       <div className="container py-12 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Left content */}
+        <div className="grid items-center gap-10 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            {/* Urgency / scarcity badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-sm font-semibold text-red-600">
-              <Flame className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-              3 créneaux gratuits restants cette semaine
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-semibold text-red-600">
+              <Flame className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+              3 jours de RDV encore disponibles cette semaine
             </div>
 
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
-              Le sourire que vous{" "}
-              <span className="text-gradient-primary">méritez</span>{" "}
-              — à Rabat
+            <span className="mb-2 block text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+              a Rabat Hay Riad
+            </span>
+
+            <h1 className="font-heading text-4xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-6xl">
+              Le sourire que vous <span className="text-gradient-primary">meritez</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-lg">
-              Clinique dentaire premium à Rabat — Blanchiment laser, implants,
-              Hollywood Smile. Résultats visibles en <strong>1 séance</strong>,
-              suivi personnalisé garanti.
+            <p className="max-w-lg text-lg text-muted-foreground">
+              Clinique dentaire premium a Rabat Hay Riad. Blanchiment laser, implants,
+              Hollywood Smile. Resultats visibles des la <strong>1re seance</strong>,
+              accompagnement personnalise et experience haut de gamme.
             </p>
 
-            {/* Trust bullet points */}
             <ul className="space-y-3">
               {[
-                "Équipements 3D de dernière génération",
-                "+15 ans d'expérience & +1 200 patients traités",
-                "Résultats garantis, suivi inclus — zéro surprise",
+                "Equipements 3D de derniere generation",
+                "+15 ans d'experience et +1 200 patients traites",
+                "Suivi inclus, parcours fluide, zero surprise",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-foreground">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Check className="w-3.5 h-3.5 text-primary" />
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <Check className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <span className="font-medium text-sm">{item}</span>
+                  <span className="text-sm font-medium">{item}</span>
                 </li>
               ))}
             </ul>
 
-            {/* Social proof micro-widget */}
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                 ))}
               </div>
               <span>
-                <strong className="text-foreground">4.9/5</strong> — basé sur 237 avis Google
+                <strong className="text-foreground">4.9/5</strong> - base sur 237 avis Google
               </span>
             </div>
 
-            {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap">
               <Button
                 id="hero-cta-booking"
                 size="lg"
-                className="shadow-cta font-heading font-bold text-base px-8 animate-pulse-glow"
+                className="w-full animate-pulse-glow px-8 text-base font-bold shadow-cta sm:w-auto"
                 onClick={() =>
                   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
                 }
-                aria-label="Prendre un rendez-vous gratuit à DentaCare Rabat"
+                aria-label="Prendre RDV a DentaCare Rabat"
               >
-                <CalendarDays className="w-4 h-4" aria-hidden="true" />
-                Consultation Gratuite
+                <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                Prendre RDV
               </Button>
+
               <Button
                 id="hero-cta-phone"
                 size="lg"
                 variant="outline"
-                className="font-heading font-semibold gap-2 border-primary/30 text-primary hover:bg-primary/5"
+                className="w-full gap-2 border-primary/30 font-semibold text-primary hover:bg-primary/5 sm:w-auto"
                 asChild
               >
-                <a href="tel:+212600000000" aria-label="Appeler DentaCare Rabat">
-                  <Phone className="w-4 h-4" />
-                  Appeler maintenant
+                <a href="tel:+212600000000" aria-label="Prendre RDV par appel avec DentaCare Rabat">
+                  <Phone className="h-4 w-4" />
+                  Prendre RDV par appel
                 </a>
               </Button>
+
               <Button
                 id="hero-cta-whatsapp"
                 size="lg"
-                className="bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground font-heading font-semibold gap-2"
+                className="w-full gap-2 bg-whatsapp font-semibold text-whatsapp-foreground hover:bg-whatsapp/90 sm:w-auto"
                 asChild
               >
                 <a
-                  href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20une%20consultation%20gratuite"
+                  href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Contacter DentaCare Rabat via WhatsApp"
+                  aria-label="Prendre RDV sur WhatsApp avec DentaCare Rabat"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  WhatsApp
+                  <MessageCircle className="h-4 w-4" />
+                  Prendre RDV sur WhatsApp
                 </a>
               </Button>
             </div>
           </motion.div>
 
-          {/* Right image — eager loaded for LCP */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -117,27 +115,27 @@ const HeroSection = () => {
             className="relative flex justify-center"
           >
             <div className="relative w-72 md:w-80 lg:w-96">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 transform rotate-3 scale-105" />
+              <div className="absolute inset-0 scale-105 rotate-3 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5" />
               <img
                 src={doctorImg}
-                alt="Dr. Amine Benali, chirurgien dentiste à Rabat — DentaCare"
-                className="relative rounded-3xl object-cover w-full shadow-card"
+                alt="Dr. Amine Benali, chirurgien dentiste a Rabat - DentaCare"
+                className="relative w-full rounded-3xl object-cover shadow-card"
                 width={800}
                 height={1024}
                 loading="eager"
                 fetchPriority="high"
               />
-              {/* Star rating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-card border border-border">
+
+              <div className="absolute -bottom-4 -left-4 rounded-2xl border border-border bg-card p-4 shadow-card">
                 <div className="flex items-center gap-2">
                   <div className="flex text-gold">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-lg" aria-hidden="true">★</span>
+                      <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                     ))}
                   </div>
                   <span className="font-heading font-bold text-foreground">4.9</span>
                 </div>
-                <p className="text-xs text-muted-foreground mt-0.5">+1 200 patients satisfaits</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">+1 200 patients satisfaits</p>
               </div>
             </div>
           </motion.div>
@@ -147,4 +145,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

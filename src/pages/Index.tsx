@@ -4,7 +4,6 @@ import TrustBar from "@/components/landing/TrustBar";
 import ServicesSection from "@/components/landing/ServicesSection";
 import VideoSection from "@/components/landing/VideoSection";
 import ClinicSection from "@/components/landing/ClinicSection";
-import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ReviewsSection from "@/components/landing/ReviewsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import BookingSection from "@/components/landing/BookingSection";
@@ -21,7 +20,6 @@ const Index = () => {
       <ServicesSection />
       <VideoSection />
       <ClinicSection />
-      <TestimonialsSection />
       <ReviewsSection />
       <FAQSection />
       <BookingSection />
