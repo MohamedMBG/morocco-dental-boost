@@ -30,6 +30,7 @@ const BookingSection = () => {
   const [phone, setPhone] = useState("");
   const [preferredDay, setPreferredDay] = useState("");
   const [service, setService] = useState("");
+  const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,6 +54,7 @@ const BookingSection = () => {
           phone: phone.trim(),
           preferredDay: preferredDay.trim(),
           service: service.trim(),
+          website: website.trim(),
         }),
       });
 
@@ -72,6 +74,7 @@ const BookingSection = () => {
       setPhone("");
       setPreferredDay("");
       setService("");
+      setWebsite("");
       toast.success("Votre demande a bien ete envoyee. Nous vous recontacterons rapidement.");
     } catch (error) {
       const message =
@@ -116,6 +119,19 @@ const BookingSection = () => {
             <div className="mb-6 border-t border-border" />
 
             <form onSubmit={handleSubmit} className="space-y-4" aria-label="Formulaire de RDV">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="booking-website">Website</label>
+                <input
+                  id="booking-website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                />
+              </div>
+
               <Field label="Votre nom complet *" icon={User}>
                 <Input
                   id="booking-name"

@@ -46,14 +46,14 @@ const Header = () => {
               onClick={() =>
                 trackButtonClick({
                   buttonId: "header-call-cta",
-                  buttonText: "Appeler maintenant",
+                  buttonText: "Prendre RDV",
                   buttonLocation: "header",
                   actionType: "phone_call",
                   destination: "tel:+212631581901",
                 })
               }
             >
-              Appeler maintenant
+              Prendre RDV
             </a>
           </Button>
         </div>
