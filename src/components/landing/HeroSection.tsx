@@ -1,9 +1,10 @@
 import { Check, Phone, MessageCircle, Star, Flame, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
-import heroPortrait from "@/assets/cabinet-dentaire-hay-riad-rabat.jpeg";
-import heroClinicA from "@/assets/IMG_9182.jpeg";
-import heroClinicB from "@/assets/IMG_9348.jpeg";
+import heroPortrait from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
+import heroClinicA from "@/assets/IMG_9182.optimized.jpg";
+import heroClinicB from "@/assets/IMG_9348.optimized.jpg";
 
 const HeroSection = () => {
   return (
@@ -69,9 +70,16 @@ const HeroSection = () => {
                 id="hero-cta-booking"
                 size="lg"
                 className="w-full animate-pulse-glow px-8 text-base font-bold shadow-cta sm:w-auto"
-                onClick={() =>
-                  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => {
+                  trackButtonClick({
+                    buttonId: "hero-cta-booking",
+                    buttonText: "Prendre RDV",
+                    buttonLocation: "hero",
+                    actionType: "scroll_to_booking",
+                    destination: "#booking",
+                  });
+                  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 aria-label="Prendre RDV a ORIS DENTAL CENTER"
               >
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
@@ -85,7 +93,19 @@ const HeroSection = () => {
                 className="w-full gap-2 border-primary/30 font-semibold text-primary hover:bg-primary/5 sm:w-auto"
                 asChild
               >
-                <a href="tel:+212631581901" aria-label="Prendre RDV par appel avec ORIS DENTAL CENTER">
+                <a
+                  href="tel:+212631581901"
+                  aria-label="Prendre RDV par appel avec ORIS DENTAL CENTER"
+                  onClick={() =>
+                    trackButtonClick({
+                      buttonId: "hero-cta-phone",
+                      buttonText: "Prendre RDV par appel",
+                      buttonLocation: "hero",
+                      actionType: "phone_call",
+                      destination: "tel:+212631581901",
+                    })
+                  }
+                >
                   <Phone className="h-4 w-4" />
                   Prendre RDV par appel
                 </a>
@@ -102,6 +122,15 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Prendre RDV sur WhatsApp avec ORIS DENTAL CENTER"
+                  onClick={() =>
+                    trackButtonClick({
+                      buttonId: "hero-cta-whatsapp",
+                      buttonText: "Prendre RDV sur WhatsApp",
+                      buttonLocation: "hero",
+                      actionType: "whatsapp",
+                      destination: "https://wa.me/212631581901",
+                    })
+                  }
                 >
                   <MessageCircle className="h-4 w-4" />
                   Prendre RDV sur WhatsApp
@@ -127,6 +156,7 @@ const HeroSection = () => {
                   height={1350}
                   loading="eager"
                   fetchPriority="high"
+                  decoding="async"
                 />
 
                 <div className="absolute -bottom-4 -left-2 rounded-2xl border border-border bg-card p-4 shadow-card">
@@ -150,6 +180,7 @@ const HeroSection = () => {
                   width={1200}
                   height={900}
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src={heroClinicB}
@@ -158,6 +189,7 @@ const HeroSection = () => {
                   width={1200}
                   height={900}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const Field = ({
   label,
@@ -29,8 +30,9 @@ const BookingSection = () => {
   const [phone, setPhone] = useState("");
   const [preferredDay, setPreferredDay] = useState("");
   const [service, setService] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name.trim() || !phone.trim() || !preferredDay.trim()) {
@@ -38,12 +40,46 @@ const BookingSection = () => {
       return;
     }
 
-    const servicePart = service ? ` pour ${service}` : "";
-    const dayPart = ` (jour prefere : ${preferredDay})`;
-    const message = `Bonjour, je suis ${name.trim()}. Je souhaite prendre RDV${servicePart}${dayPart}. Mon numero : ${phone.trim()}`;
+    try {
+      setIsSubmitting(true);
 
-    window.open(`https://wa.me/212631581901?text=${encodeURIComponent(message)}`, "_blank");
-    toast.success("Redirection vers WhatsApp - reponse en moins de 30 min !");
+      const response = await fetch("/api/book-appointment.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          phone: phone.trim(),
+          preferredDay: preferredDay.trim(),
+          service: service.trim(),
+        }),
+      });
+
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Impossible d'envoyer votre demande pour le moment.");
+      }
+
+      trackFormSubmit({
+        formName: "booking_email_form",
+        buttonId: "booking-submit",
+        serviceName: service || undefined,
+      });
+
+      setName("");
+      setPhone("");
+      setPreferredDay("");
+      setService("");
+      toast.success("Votre demande a bien ete envoyee. Nous vous recontacterons rapidement.");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Une erreur est survenue. Merci de reessayer.";
+      toast.error(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -73,7 +109,7 @@ const BookingSection = () => {
 
               <p className="mt-2 flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted-foreground sm:text-base">
                 <Zap className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
-                Reponse garantie en moins de <strong className="text-foreground">30 minutes</strong> via WhatsApp
+                Reponse garantie en moins de <strong className="text-foreground">30 minutes</strong> par notre equipe
               </p>
             </div>
 
@@ -156,10 +192,11 @@ const BookingSection = () => {
                 type="submit"
                 size="lg"
                 className="mt-2 h-14 w-full gap-2 text-base font-bold shadow-cta"
-                aria-label="Prendre RDV via WhatsApp"
+                aria-label="Envoyer ma demande de RDV"
+                disabled={isSubmitting}
               >
                 <Send className="h-4 w-4 flex-shrink-0" />
-                Prendre RDV sur WhatsApp
+                {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
               </Button>
 
             </form>

@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const Header = () => {
   return (
@@ -21,6 +22,15 @@ const Header = () => {
           <a
             href="tel:+212631581901"
             className="hidden items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary sm:flex"
+            onClick={() =>
+              trackButtonClick({
+                buttonId: "header-phone-link",
+                buttonText: "+212 631-581901",
+                buttonLocation: "header",
+                actionType: "phone_call",
+                destination: "tel:+212631581901",
+              })
+            }
           >
             <Phone className="h-4 w-4" />
             +212 631-581901
@@ -28,7 +38,16 @@ const Header = () => {
           <Button
             size="sm"
             className="font-heading font-semibold shadow-cta"
-            onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => {
+              trackButtonClick({
+                buttonId: "header-booking-cta",
+                buttonText: "Prendre RDV",
+                buttonLocation: "header",
+                actionType: "scroll_to_booking",
+                destination: "#booking",
+              });
+              document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Prendre RDV
           </Button>

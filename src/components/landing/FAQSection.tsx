@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const faqs = [
   {
@@ -114,9 +115,16 @@ const FAQSection = () => {
               id="faq-cta"
               size="lg"
               className="font-heading font-bold shadow-cta"
-              onClick={() =>
-                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => {
+                trackButtonClick({
+                  buttonId: "faq-cta",
+                  buttonText: "Prendre RDV",
+                  buttonLocation: "faq",
+                  actionType: "scroll_to_booking",
+                  destination: "#booking",
+                });
+                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+              }}
               aria-label="Prendre RDV a la clinique dentaire ORIS DENTAL CENTER"
             >
               <CalendarDays className="h-4 w-4" aria-hidden="true" />

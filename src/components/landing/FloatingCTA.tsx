@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const FloatingCTA = () => {
   return (
@@ -9,7 +10,19 @@ const FloatingCTA = () => {
         size="lg"
         asChild
       >
-        <a href="tel:+212631581901" aria-label="Appeler le docteur maintenant">
+        <a
+          href="tel:+212631581901"
+          aria-label="Appeler le docteur maintenant"
+          onClick={() =>
+            trackButtonClick({
+              buttonId: "floating-phone-cta",
+              buttonText: "Appeler nous",
+              buttonLocation: "floating_cta",
+              actionType: "phone_call",
+              destination: "tel:+212631581901",
+            })
+          }
+        >
           <Phone className="h-4 w-4" />
           Appeler nous
         </a>

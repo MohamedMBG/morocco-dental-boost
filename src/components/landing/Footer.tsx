@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { trackButtonClick } from "@/lib/analytics";
 
 const Footer = () => {
   return (
@@ -22,6 +23,15 @@ const Footer = () => {
                     <a
                       href={link.href}
                       className="underline-offset-2 transition-colors hover:text-trust-foreground hover:underline"
+                      onClick={() =>
+                        trackButtonClick({
+                          buttonId: `footer-nav-${link.href.replace("#", "")}`,
+                          buttonText: link.label,
+                          buttonLocation: "footer",
+                          actionType: "anchor_navigation",
+                          destination: link.href,
+                        })
+                      }
                     >
                       {link.label}
                     </a>
@@ -38,7 +48,19 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              <a href="tel:+212631581901" className="transition-colors hover:text-trust-foreground">
+              <a
+                href="tel:+212631581901"
+                className="transition-colors hover:text-trust-foreground"
+                onClick={() =>
+                  trackButtonClick({
+                    buttonId: "footer-phone-link",
+                    buttonText: "+212 631-581901",
+                    buttonLocation: "footer",
+                    actionType: "phone_call",
+                    destination: "tel:+212631581901",
+                  })
+                }
+              >
                 +212 631-581901
               </a>
             </div>
@@ -50,6 +72,15 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-trust-foreground"
                 aria-label="Contacter ORIS DENTAL CENTER sur WhatsApp"
+                onClick={() =>
+                  trackButtonClick({
+                    buttonId: "footer-whatsapp-link",
+                    buttonText: "WhatsApp",
+                    buttonLocation: "footer",
+                    actionType: "whatsapp",
+                    destination: "https://wa.me/212631581901",
+                  })
+                }
               >
                 WhatsApp
               </a>

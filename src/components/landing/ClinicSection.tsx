@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.jpeg";
-import clinicDetailA from "@/assets/IMG_9234.jpeg";
-import clinicDetailB from "@/assets/IMG_9279.jpeg";
-import clinicDetailC from "@/assets/IMG_9412.jpeg";
+import { trackButtonClick } from "@/lib/analytics";
+import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
+import clinicDetailA from "@/assets/IMG_9234.optimized.jpg";
+import clinicDetailB from "@/assets/IMG_9279.optimized.jpg";
+import clinicDetailC from "@/assets/IMG_9412.optimized.jpg";
 
 const gallery = [
   {
@@ -38,6 +39,7 @@ const ClinicSection = () => {
               loading="lazy"
               width={1920}
               height={1440}
+              decoding="async"
             />
 
             <div className="grid grid-cols-3 gap-3">
@@ -50,6 +52,7 @@ const ClinicSection = () => {
                   loading="lazy"
                   width={900}
                   height={900}
+                  decoding="async"
                 />
               ))}
             </div>
@@ -83,7 +86,16 @@ const ClinicSection = () => {
             </ul>
             <Button
               className="font-heading font-bold shadow-cta"
-              onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => {
+                trackButtonClick({
+                  buttonId: "clinic-cta",
+                  buttonText: "Prendre RDV",
+                  buttonLocation: "clinic",
+                  actionType: "scroll_to_booking",
+                  destination: "#booking",
+                });
+                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Prendre RDV
             </Button>

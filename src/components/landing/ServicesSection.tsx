@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, Shield, Smile, Zap, HeartPulse, ScanFace, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const services = [
   {
@@ -62,9 +63,17 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="group cursor-pointer rounded-xl border border-border bg-card p-6 shadow-card transition-colors hover:border-primary/30"
-              onClick={() =>
-                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => {
+                trackButtonClick({
+                  buttonId: `service-card-${i + 1}`,
+                  buttonText: service.title,
+                  buttonLocation: "services",
+                  actionType: "scroll_to_booking",
+                  destination: "#booking",
+                  serviceName: service.title,
+                });
+                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+              }}
               role="button"
               tabIndex={0}
               aria-label={`Prendre RDV pour ${service.title}`}
@@ -83,9 +92,16 @@ const ServicesSection = () => {
             id="services-cta"
             size="lg"
             className="font-heading font-bold shadow-cta"
-            onClick={() =>
-              document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => {
+              trackButtonClick({
+                buttonId: "services-cta",
+                buttonText: "Prendre RDV",
+                buttonLocation: "services",
+                actionType: "scroll_to_booking",
+                destination: "#booking",
+              });
+              document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+            }}
             aria-label="Prendre RDV a Rabat"
           >
             <CalendarDays className="h-4 w-4" aria-hidden="true" />

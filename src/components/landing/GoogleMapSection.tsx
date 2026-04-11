@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Navigation, Clock, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from "@/lib/analytics";
 
 const GoogleMapSection = () => {
   return (
@@ -77,7 +78,19 @@ const GoogleMapSection = () => {
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Contact</h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    <a href="tel:+212631581901" className="transition-colors hover:text-primary">
+                    <a
+                      href="tel:+212631581901"
+                      className="transition-colors hover:text-primary"
+                      onClick={() =>
+                        trackButtonClick({
+                          buttonId: "location-phone-link",
+                          buttonText: "+212 631-581901",
+                          buttonLocation: "location",
+                          actionType: "phone_call",
+                          destination: "tel:+212631581901",
+                        })
+                      }
+                    >
                       +212 631-581901
                     </a>
                   </p>
@@ -91,6 +104,15 @@ const GoogleMapSection = () => {
                   href="https://www.google.com/maps/dir//33.9716,-6.8498"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackButtonClick({
+                      buttonId: "location-maps-cta",
+                      buttonText: "Itineraire Google Maps",
+                      buttonLocation: "location",
+                      actionType: "maps_direction",
+                      destination: "https://www.google.com/maps/dir//33.9716,-6.8498",
+                    })
+                  }
                 >
                   <Navigation className="h-4 w-4" />
                   Itineraire Google Maps
@@ -99,7 +121,16 @@ const GoogleMapSection = () => {
               <Button
                 variant="outline"
                 className="w-full border-primary/30 font-semibold text-primary hover:bg-primary/5"
-                onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => {
+                  trackButtonClick({
+                    buttonId: "location-booking-cta",
+                    buttonText: "Prendre RDV",
+                    buttonLocation: "location",
+                    actionType: "scroll_to_booking",
+                    destination: "#booking",
+                  });
+                  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Prendre RDV
               </Button>

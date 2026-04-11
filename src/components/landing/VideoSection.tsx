@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Play, Pause } from "lucide-react";
 import { useRef, useState } from "react";
 import clinicTourVideo from "@/assets/0604.mp4";
-import clinicTourPoster from "@/assets/IMG_9241.jpeg";
+import clinicTourPoster from "@/assets/IMG_9241.optimized.jpg";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
