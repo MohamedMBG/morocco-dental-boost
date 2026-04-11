@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Combien coute un blanchiment dentaire a Rabat ?",
     answer:
-      "Le prix d'un blanchiment dentaire laser a DentaCare Rabat depend du traitement choisi. Contactez-nous pour une estimation personnalisee et une reponse en moins de 30 min via WhatsApp.",
+      "Le prix d'un blanchiment dentaire a ORIS DENTAL CENTER depend du traitement choisi. Contactez-nous pour une estimation personnalisee et une reponse en moins de 30 min via WhatsApp.",
   },
   {
     question: "Comment prendre RDV ?",
@@ -25,14 +25,14 @@ const faqs = [
       "Oui, nous prenons en charge les urgences dentaires 6 jours sur 7, de 8h a 20h. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immediatement via WhatsApp pour une prise en charge prioritaire.",
   },
   {
-    question: "Proposez-vous l'Invisalign (orthodontie invisible) a Rabat ?",
+    question: "Proposez-vous des solutions esthetiques pour le sourire a Rabat ?",
     answer:
-      "Oui, DentaCare Rabat est partenaire Invisalign. Les aligneurs invisibles corrigent votre sourire discretement, sans les desagrements des bagues metalliques. Un premier diagnostic permet d'evaluer si vous etes candidat.",
+      "Oui, ORIS DENTAL CENTER propose des solutions esthetiques pour le sourire, notamment blanchiment, facettes et plans de traitement personnalises selon votre besoin.",
   },
   {
     question: "Quelle est l'adresse et les horaires de la clinique ?",
     answer:
-      "Notre clinique est situee au 123 Avenue Mohammed V, Rabat. Nous sommes ouverts du lundi au vendredi de 8h a 20h, et le samedi de 8h a 18h. Parking a proximite disponible.",
+      "Notre clinique ORIS DENTAL CENTER est situee a Rabat. Nous sommes ouverts du lundi au vendredi de 8h a 20h, et le samedi de 8h a 18h.",
   },
 ];
 
@@ -45,7 +45,7 @@ const FAQSection = () => {
     <section
       className="bg-background py-16 md:py-24"
       id="faq"
-      aria-label="Questions frequentes - DentaCare Rabat"
+      aria-label="Questions frequentes - ORIS DENTAL CENTER"
     >
       <div className="container">
         <div className="mx-auto max-w-3xl">
@@ -54,7 +54,7 @@ const FAQSection = () => {
               Questions frequentes
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Tout ce que vous devez savoir avant votre premiere visite a DentaCare Rabat.
+              Tout ce que vous devez savoir avant votre premiere visite a ORIS DENTAL CENTER.
             </p>
           </div>
 
@@ -117,7 +117,7 @@ const FAQSection = () => {
               onClick={() =>
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
               }
-              aria-label="Prendre RDV a la clinique dentaire DentaCare Rabat"
+              aria-label="Prendre RDV a la clinique dentaire ORIS DENTAL CENTER"
             >
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               Prendre RDV

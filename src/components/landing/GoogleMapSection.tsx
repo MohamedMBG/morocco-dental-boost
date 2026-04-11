@@ -8,11 +8,11 @@ const GoogleMapSection = () => {
       <div className="container">
         <div className="mb-10 text-center">
           <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-            Nous trouver
+            ORIS DENTAL CENTER a Rabat
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Idealement situes a Rabat, avec un acces simple, proche des axes principaux
-            et pratique pour un RDV rapide.
+            Situe a Rabat Hay Riad, ORIS DENTAL CENTER est facile d'acces pour une
+            consultation dentaire, un controle ou une urgence.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ const GoogleMapSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localisation DentaCare Rabat"
+              title="Localisation ORIS DENTAL CENTER Rabat"
             />
           </motion.div>
 
@@ -49,7 +49,7 @@ const GoogleMapSection = () => {
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Adresse</h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    123 Avenue Mohammed V
+                    Hay Riad
                     <br />
                     Rabat, Maroc
                   </p>

@@ -1,25 +1,58 @@
 import { motion } from "framer-motion";
-import clinicImg from "@/assets/hero-clinic.jpg";
 import { Button } from "@/components/ui/button";
+import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.jpeg";
+import clinicDetailA from "@/assets/IMG_9234.jpeg";
+import clinicDetailB from "@/assets/IMG_9279.jpeg";
+import clinicDetailC from "@/assets/IMG_9412.jpeg";
+
+const gallery = [
+  {
+    src: clinicDetailA,
+    alt: "Fauteuil de soin et equipement de la clinique dentaire",
+  },
+  {
+    src: clinicDetailB,
+    alt: "Espace interieur du cabinet dentaire a Rabat",
+  },
+  {
+    src: clinicDetailC,
+    alt: "Vue detaillee d'une salle de traitement moderne",
+  },
+];
 
 const ClinicSection = () => {
   return (
     <section className="bg-secondary/30 py-16 md:py-24">
       <div className="container">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.15fr_0.95fr]">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="space-y-4"
           >
             <img
-              src={clinicImg}
-              alt="Clinique dentaire moderne a Rabat"
-              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card"
+              src={clinicMain}
+              alt="Clinique dentaire moderne a Rabat Hay Riad"
+              className="aspect-[4/3] w-full rounded-2xl object-cover object-[center_22%] shadow-card"
               loading="lazy"
               width={1920}
-              height={1080}
+              height={1440}
             />
+
+            <div className="grid grid-cols-3 gap-3">
+              {gallery.map((image) => (
+                <img
+                  key={image.alt}
+                  src={image.src}
+                  alt={image.alt}
+                  className="aspect-square w-full rounded-2xl object-cover shadow-card"
+                  loading="lazy"
+                  width={900}
+                  height={900}
+                />
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
@@ -32,9 +65,9 @@ const ClinicSection = () => {
               Une clinique a la pointe de la technologie
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Notre cabinet a Rabat est equipe des dernieres technologies en imagerie 3D,
-              laser dentaire et materiaux biocompatibles. Chaque traitement est realise
-              dans un environnement sterile, confortable et premium.
+              Decouvrez nos vrais espaces de soin a Rabat Hay Riad: environnement soigne,
+              fauteuils modernes, imagerie de precision et parcours patient pense pour le
+              confort du premier accueil jusqu'au suivi.
             </p>
             <ul className="space-y-2 text-sm text-foreground">
               {[

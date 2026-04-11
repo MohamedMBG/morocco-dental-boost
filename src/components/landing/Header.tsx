@@ -3,23 +3,31 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-16">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-card/90 backdrop-blur-md">
+      <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">D+</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+            <span className="font-heading text-lg font-bold text-primary-foreground">OD</span>
           </div>
-          <span className="font-heading font-bold text-xl text-foreground">DentaCare</span>
+          <div className="leading-tight">
+            <span className="block font-heading text-sm font-bold uppercase tracking-[0.18em] text-foreground">
+              ORIS DENTAL CENTER
+            </span>
+            <span className="block text-xs text-muted-foreground">Dr EL MEHDI FATIH</span>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="tel:+212631581901" className="hidden sm:flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            <Phone className="w-4 h-4" />
-            +212 6 00 00 00 00
+          <a
+            href="tel:+212631581901"
+            className="hidden items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary sm:flex"
+          >
+            <Phone className="h-4 w-4" />
+            +212 631-581901
           </a>
           <Button
             size="sm"
-            className="shadow-cta font-heading font-semibold"
+            className="font-heading font-semibold shadow-cta"
             onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
           >
             Prendre RDV

@@ -1,13 +1,15 @@
 import { Check, Phone, MessageCircle, Star, Flame, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import doctorImg from "@/assets/doctor-portrait.jpg";
+import heroPortrait from "@/assets/cabinet-dentaire-hay-riad-rabat.jpeg";
+import heroClinicA from "@/assets/IMG_9182.jpeg";
+import heroClinicB from "@/assets/IMG_9348.jpeg";
 
 const HeroSection = () => {
   return (
     <section
       className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 pt-16"
-      aria-label="Section principale - Clinique DentaCare Rabat"
+      aria-label="Section principale - ORIS DENTAL CENTER Rabat"
     >
       <div className="container py-12 md:py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
@@ -23,7 +25,7 @@ const HeroSection = () => {
             </div>
 
             <span className="mb-2 block text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-              a Rabat Hay Riad
+              ORIS DENTAL CENTER a Rabat Hay Riad
             </span>
 
             <h1 className="font-heading text-4xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-6xl">
@@ -31,15 +33,15 @@ const HeroSection = () => {
             </h1>
 
             <p className="max-w-lg text-lg text-muted-foreground">
-              Clinique dentaire premium a Rabat Hay Riad. Blanchiment laser, implants,
-              Hollywood Smile. Resultats visibles des la <strong>1re seance</strong>,
-              accompagnement personnalise et experience haut de gamme.
+              Dr EL MEHDI FATIH vous accueille a ORIS DENTAL CENTER a Rabat Hay Riad
+              pour vos implants, facettes, blanchiment et soins dentaires avec un
+              accompagnement personnalise.
             </p>
 
             <ul className="space-y-3">
               {[
-                "Equipements 3D de derniere generation",
-                "+15 ans d'experience et +1 200 patients traites",
+                "Equipements de derniere generation",
+                "Dr EL MEHDI FATIH et accompagnement personnalise",
                 "Suivi inclus, parcours fluide, zero surprise",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-foreground">
@@ -70,7 +72,7 @@ const HeroSection = () => {
                 onClick={() =>
                   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
                 }
-                aria-label="Prendre RDV a DentaCare Rabat"
+                aria-label="Prendre RDV a ORIS DENTAL CENTER"
               >
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
                 Prendre RDV
@@ -83,7 +85,7 @@ const HeroSection = () => {
                 className="w-full gap-2 border-primary/30 font-semibold text-primary hover:bg-primary/5 sm:w-auto"
                 asChild
               >
-                <a href="tel:+212631581901" aria-label="Prendre RDV par appel avec DentaCare Rabat">
+                <a href="tel:+212631581901" aria-label="Prendre RDV par appel avec ORIS DENTAL CENTER">
                   <Phone className="h-4 w-4" />
                   Prendre RDV par appel
                 </a>
@@ -99,7 +101,7 @@ const HeroSection = () => {
                   href="https://wa.me/212631581901?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Prendre RDV sur WhatsApp avec DentaCare Rabat"
+                  aria-label="Prendre RDV sur WhatsApp avec ORIS DENTAL CENTER"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Prendre RDV sur WhatsApp
@@ -114,28 +116,49 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-72 md:w-80 lg:w-96">
-              <div className="absolute inset-0 scale-105 rotate-3 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5" />
-              <img
-                src={doctorImg}
-                alt="Dr. Amine Benali, chirurgien dentiste a Rabat - DentaCare"
-                className="relative w-full rounded-3xl object-cover shadow-card"
-                width={800}
-                height={1024}
-                loading="eager"
-                fetchPriority="high"
-              />
+            <div className="grid w-full max-w-[34rem] gap-4 sm:grid-cols-[1.35fr_0.8fr]">
+              <div className="relative">
+                <div className="absolute inset-0 scale-105 rotate-3 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5" />
+                <img
+                  src={heroPortrait}
+                  alt="Patiente dans la clinique dentaire a Rabat"
+                  className="relative aspect-[4/5] w-full rounded-3xl object-cover shadow-card"
+                  width={1080}
+                  height={1350}
+                  loading="eager"
+                  fetchPriority="high"
+                />
 
-              <div className="absolute -bottom-4 -left-4 rounded-2xl border border-border bg-card p-4 shadow-card">
-                <div className="flex items-center gap-2">
-                  <div className="flex text-gold">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                    ))}
+                <div className="absolute -bottom-4 -left-2 rounded-2xl border border-border bg-card p-4 shadow-card">
+                  <div className="flex items-center gap-2">
+                    <div className="flex text-gold">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                      ))}
+                    </div>
+                    <span className="font-heading font-bold text-foreground">4.9</span>
                   </div>
-                  <span className="font-heading font-bold text-foreground">4.9</span>
+                  <p className="mt-0.5 text-xs text-muted-foreground">+1 200 patients satisfaits</p>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground">+1 200 patients satisfaits</p>
+              </div>
+
+              <div className="grid gap-4">
+                <img
+                  src={heroClinicA}
+                  alt="Salle de soin moderne a Rabat"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                />
+                <img
+                  src={heroClinicB}
+                  alt="Interieur du cabinet dentaire a Hay Riad"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                />
               </div>
             </div>
           </motion.div>

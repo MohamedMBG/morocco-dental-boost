@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Send, Shield, Flame, Zap, User, Phone, Stethoscope, Clock } from "lucide-react";
+import { Send, Shield, Flame, Zap, User, Phone, Stethoscope, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -33,13 +33,13 @@ const BookingSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !phone.trim()) {
+    if (!name.trim() || !phone.trim() || !preferredDay.trim()) {
       toast.error("Veuillez remplir tous les champs obligatoires");
       return;
     }
 
     const servicePart = service ? ` pour ${service}` : "";
-    const dayPart = preferredDay ? ` (jour prefere : ${preferredDay})` : "";
+    const dayPart = ` (jour prefere : ${preferredDay})`;
     const message = `Bonjour, je suis ${name.trim()}. Je souhaite prendre RDV${servicePart}${dayPart}. Mon numero : ${phone.trim()}`;
 
     window.open(`https://wa.me/212631581901?text=${encodeURIComponent(message)}`, "_blank");
@@ -50,7 +50,7 @@ const BookingSection = () => {
     <section
       className="bg-background py-12 md:py-24"
       id="booking"
-      aria-label="Formulaire de prise de RDV DentaCare Rabat"
+      aria-label="Formulaire de prise de RDV ORIS DENTAL CENTER"
     >
       <div className="container px-4 sm:px-6">
         <div className="mx-auto max-w-lg">
@@ -131,7 +131,7 @@ const BookingSection = () => {
                 </Select>
               </Field>
 
-              <Field label="Jour prefere (optionnel)" icon={Clock}>
+              <Field label="Jour prefere *" icon={Clock}>
                 <Select value={preferredDay} onValueChange={setPreferredDay}>
                   <SelectTrigger
                     id="booking-day"
@@ -162,29 +162,6 @@ const BookingSection = () => {
                 Prendre RDV sur WhatsApp
               </Button>
 
-              <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                <span className="flex-1 border-t border-border" />
-                <span>ou prendre RDV directement</span>
-                <span className="flex-1 border-t border-border" />
-              </div>
-
-              <Button
-                id="booking-whatsapp-direct"
-                type="button"
-                size="lg"
-                className="h-14 w-full gap-2 bg-whatsapp text-base font-bold text-whatsapp-foreground hover:bg-whatsapp/90"
-                asChild
-              >
-                <a
-                  href="https://wa.me/212631581901?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Prendre RDV par WhatsApp maintenant"
-                >
-                  <MessageCircle className="h-4 w-4 flex-shrink-0" />
-                  Prendre RDV par WhatsApp
-                </a>
-              </Button>
             </form>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">

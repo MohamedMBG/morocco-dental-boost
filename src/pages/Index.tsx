@@ -8,7 +8,6 @@ import ReviewsSection from "@/components/landing/ReviewsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import BookingSection from "@/components/landing/BookingSection";
 import GoogleMapSection from "@/components/landing/GoogleMapSection";
-import FloatingCTA from "@/components/landing/FloatingCTA";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -25,7 +24,6 @@ const Index = () => {
       <BookingSection />
       <GoogleMapSection />
       <Footer />
-      <FloatingCTA />
     </div>
   );
 };

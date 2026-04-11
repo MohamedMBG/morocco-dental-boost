@@ -6,10 +6,10 @@ const Footer = () => {
       <div className="container">
         <div className="mx-auto grid max-w-4xl gap-8 text-center md:grid-cols-3 md:text-left">
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold">DentaCare Rabat</h3>
+            <h3 className="mb-3 font-heading text-lg font-bold">ORIS DENTAL CENTER</h3>
             <p className="mb-3 text-sm text-trust-foreground/60">
-              Votre clinique dentaire de confiance a Rabat. Blanchiment, implants,
-              Hollywood Smile et orthodontie Invisalign.
+              Clinique dentaire a Rabat dirigee par Dr EL MEHDI FATIH. Implants,
+              blanchiment, facettes et soins dentaires.
             </p>
             <nav aria-label="Liens de navigation rapide">
               <ul className="space-y-1 text-sm text-trust-foreground/70">
@@ -34,7 +34,7 @@ const Footer = () => {
           <address className="not-italic space-y-2 text-sm text-trust-foreground/70">
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              <span>123 Avenue Mohammed V, Rabat 10000</span>
+              <span>Hay Riad, Rabat 10000</span>
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
@@ -49,7 +49,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-trust-foreground"
-                aria-label="Contacter DentaCare Rabat sur WhatsApp"
+                aria-label="Contacter ORIS DENTAL CENTER sur WhatsApp"
               >
                 WhatsApp
               </a>
@@ -61,11 +61,13 @@ const Footer = () => {
           </address>
 
           <div className="text-sm text-trust-foreground/50">
-            <p>© 2026 DentaCare Rabat. Tous droits reserves.</p>
+            <p>© 2026 ORIS DENTAL CENTER. Tous droits reserves.</p>
             <p className="mt-1">Clinique agreee par le Ministere de la Sante du Maroc</p>
             <p className="mt-3 text-xs">
-              <span className="font-semibold text-trust-foreground/70">Clinique dentaire a Rabat Hay Riad</span>{" "}
-              - Blanchiment, implants, Hollywood Smile
+              <span className="font-semibold text-trust-foreground/70">
+                Dentiste a Rabat Hay Riad - Dr EL MEHDI FATIH
+              </span>{" "}
+              - Implants, blanchiment, facettes
             </p>
           </div>
         </div>

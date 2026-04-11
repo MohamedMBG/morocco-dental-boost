@@ -1,31 +1,33 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
-import { useState, useRef } from "react";
+import { Play, Pause } from "lucide-react";
+import { useRef, useState } from "react";
+import clinicTourVideo from "@/assets/0604.mp4";
+import clinicTourPoster from "@/assets/IMG_9241.jpeg";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+  const handlePlayToggle = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+      return;
     }
+
+    void videoRef.current.play();
   };
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="bg-background py-16 md:py-24">
       <div className="container">
-        <div className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-foreground">
-            Découvrez notre clinique
+        <div className="mb-10 text-center">
+          <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
+            Decouvrez notre clinique
           </h2>
-          <p className="text-muted-foreground mt-3 max-w-md mx-auto">
-            Visite virtuelle de nos installations modernes et de notre équipe dédiée à votre sourire.
+          <p className="mx-auto mt-3 max-w-md text-muted-foreground">
+            Une video reelle de la clinique, de l'ambiance et de nos installations a Rabat.
           </p>
         </div>
 
@@ -33,13 +35,13 @@ const VideoSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-card border border-border bg-trust aspect-video group">
+          <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border bg-trust shadow-card">
             <video
               ref={videoRef}
-              className="w-full h-full object-cover"
-              poster=""
+              className="h-full w-full object-cover"
+              poster={clinicTourPoster}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onEnded={() => setIsPlaying(false)}
@@ -47,24 +49,32 @@ const VideoSection = () => {
               playsInline
               preload="metadata"
             >
-              {/* Replace with your actual video URL */}
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
-              Votre navigateur ne supporte pas la lecture vidéo.
+              <source src={clinicTourVideo} type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture video.
             </video>
 
-            {/* Play overlay */}
             {!isPlaying && (
               <button
-                onClick={handlePlay}
-                className="absolute inset-0 flex flex-col items-center justify-center bg-trust/60 cursor-pointer transition-colors hover:bg-trust/50"
-                aria-label="Lire la vidéo"
+                onClick={handlePlayToggle}
+                className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-trust/50 transition-colors hover:bg-trust/40"
+                aria-label="Lire la video de la clinique"
               >
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary flex items-center justify-center shadow-cta animate-pulse-glow">
-                  <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" />
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-cta animate-pulse-glow md:h-24 md:w-24">
+                  <Play className="ml-1 h-8 w-8 text-primary-foreground md:h-10 md:w-10" />
                 </div>
-                <span className="mt-4 text-sm font-heading font-semibold text-primary-foreground/90">
-                  Regarder la vidéo
+                <span className="mt-4 font-heading text-sm font-semibold text-primary-foreground/90">
+                  Regarder la video
                 </span>
+              </button>
+            )}
+
+            {isPlaying && (
+              <button
+                onClick={handlePlayToggle}
+                className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-background/90 text-foreground shadow-card transition hover:bg-background"
+                aria-label="Mettre la video en pause"
+              >
+                <Pause className="h-5 w-5" />
               </button>
             )}
           </div>
