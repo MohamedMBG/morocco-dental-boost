@@ -38,18 +38,23 @@ const Header = () => {
           <Button
             size="sm"
             className="font-heading font-semibold shadow-cta"
-            onClick={() => {
-              trackButtonClick({
-                buttonId: "header-booking-cta",
-                buttonText: "Prendre RDV",
-                buttonLocation: "header",
-                actionType: "scroll_to_booking",
-                destination: "#booking",
-              });
-              document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
-            }}
+            asChild
           >
-            Prendre RDV
+            <a
+              href="tel:+212631581901"
+              aria-label="Appeler ORIS DENTAL CENTER"
+              onClick={() =>
+                trackButtonClick({
+                  buttonId: "header-call-cta",
+                  buttonText: "Appeler maintenant",
+                  buttonLocation: "header",
+                  actionType: "phone_call",
+                  destination: "tel:+212631581901",
+                })
+              }
+            >
+              Appeler maintenant
+            </a>
           </Button>
         </div>
       </div>
