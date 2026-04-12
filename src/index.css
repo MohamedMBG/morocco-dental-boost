@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,8 +53,8 @@
     --shadow-card: 0 8px 30px -8px hsl(217 100% 17% / 0.1);
     --shadow-cta: 0 8px 24px -4px hsl(217 100% 17% / 0.28);
 
-    --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: "COCOGOOSE", "Poppins", sans-serif;
+    --font-body: "Poppins", sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

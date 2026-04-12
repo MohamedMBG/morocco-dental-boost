@@ -1,4 +1,4 @@
-import { Check, Phone, MessageCircle, Star, Flame, CalendarDays } from "lucide-react";
+import { Check, Phone, Star, Flame, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
@@ -106,31 +106,6 @@ const HeroSection = () => {
                 </a>
               </Button>
 
-              <Button
-                id="hero-cta-whatsapp"
-                size="lg"
-                className="w-full gap-2 bg-whatsapp font-semibold text-whatsapp-foreground hover:bg-whatsapp/90 sm:w-auto"
-                asChild
-              >
-                <a
-                  href={clinicInfo.whatsappRdvHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Prendre RDV sur WhatsApp avec ${clinicInfo.clinicName}`}
-                  onClick={() =>
-                    trackButtonClick({
-                      buttonId: "hero-cta-whatsapp",
-                      buttonText: "Prendre RDV sur WhatsApp",
-                      buttonLocation: "hero",
-                      actionType: "whatsapp",
-                      destination: clinicInfo.whatsappHref,
-                    })
-                  }
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Prendre RDV sur WhatsApp
-                </a>
-              </Button>
             </div>
           </div>
 
