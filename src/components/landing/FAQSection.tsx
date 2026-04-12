@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
+import { clinicInfo } from "@/lib/clinic-info";
 
 const faqs = [
   {
     question: "Combien coute un blanchiment dentaire a Rabat ?",
     answer:
-      "Le prix d'un blanchiment dentaire a ORIS DENTAL CENTER depend du traitement choisi. Contactez-nous pour une estimation personnalisee et une reponse en moins de 30 min via WhatsApp.",
+      `Le prix d'un blanchiment dentaire a ${clinicInfo.clinicName} depend du traitement choisi. Contactez-nous pour une estimation personnalisee.`,
   },
   {
     question: "Comment prendre RDV ?",
@@ -18,22 +19,27 @@ const faqs = [
   {
     question: "Faites-vous des implants dentaires a Rabat ?",
     answer:
-      "Absolument. Nous sommes specialises dans la pose d'implants dentaires en titane biocompatible. Les implants sont une solution durable pour remplacer une dent manquante, avec un resultat naturel et une duree de vie de plus de 20 ans.",
+      "Oui. Le cabinet propose des traitements en implantologie pour remplacer une ou plusieurs dents manquantes avec une solution durable et naturelle.",
   },
   {
     question: "Etes-vous disponibles pour les urgences dentaires ?",
     answer:
-      "Oui, nous prenons en charge les urgences dentaires 6 jours sur 7, de 8h a 20h. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immediatement via WhatsApp pour une prise en charge prioritaire.",
+      "Oui, nous prenons en charge les urgences dentaires pendant les horaires du cabinet. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immediatement via WhatsApp ou par telephone.",
   },
   {
     question: "Proposez-vous des solutions esthetiques pour le sourire a Rabat ?",
     answer:
-      "Oui, ORIS DENTAL CENTER propose des solutions esthetiques pour le sourire, notamment blanchiment, facettes et plans de traitement personnalises selon votre besoin.",
+      `Oui, ${clinicInfo.clinicName} propose des solutions esthetiques pour le sourire, notamment blanchiment dentaire et facettes, avec un plan de traitement personnalise.`,
   },
   {
-    question: "Quelle est l'adresse et les horaires de la clinique ?",
+    question: "Quels sont les horaires de la clinique ?",
     answer:
-      "Notre clinique ORIS DENTAL CENTER est situee a Rabat. Nous sommes ouverts du lundi au vendredi de 8h a 20h, et le samedi de 8h a 18h.",
+      `Notre clinique ${clinicInfo.clinicName} est situee a Rabat. Nous sommes ouverts de 9h a 18h.`,
+  },
+  {
+    question: "Qui est le docteur en charge des soins ?",
+    answer:
+      `${clinicInfo.doctorName} est laureat de la faculte de medecine dentaire de Rabat - Universite Mohamed V, titulaire d'un Diplome Universitaire d'implantologie et compte 10 ans d'experience.`,
   },
 ];
 
@@ -46,7 +52,7 @@ const FAQSection = () => {
     <section
       className="bg-background py-16 md:py-24"
       id="faq"
-      aria-label="Questions frequentes - ORIS DENTAL CENTER"
+      aria-label={`Questions frequentes - ${clinicInfo.clinicName}`}
     >
       <div className="container">
         <div className="mx-auto max-w-3xl">
@@ -55,18 +61,14 @@ const FAQSection = () => {
               Questions frequentes
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Tout ce que vous devez savoir avant votre premiere visite a ORIS DENTAL CENTER.
+              Tout ce que vous devez savoir avant votre premiere visite a {clinicInfo.clinicName}.
             </p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div
+              <div
                 key={faq.question}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
                 className="overflow-hidden rounded-xl border border-border bg-card"
               >
                 <button
@@ -103,7 +105,7 @@ const FAQSection = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -125,7 +127,7 @@ const FAQSection = () => {
                 });
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
               }}
-              aria-label="Prendre RDV a la clinique dentaire ORIS DENTAL CENTER"
+              aria-label={`Prendre RDV a la clinique dentaire ${clinicInfo.clinicName}`}
             >
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               Prendre RDV

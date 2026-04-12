@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Send, Shield, Flame, Zap, User, Phone, Stethoscope, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { trackFormSubmit } from "@/lib/analytics";
+import { clinicInfo } from "@/lib/clinic-info";
 
 const Field = ({
   label,
@@ -89,16 +89,11 @@ const BookingSection = () => {
     <section
       className="bg-background py-12 md:py-24"
       id="booking"
-      aria-label="Formulaire de prise de RDV ORIS DENTAL CENTER"
+      aria-label={`Formulaire de prise de RDV ${clinicInfo.clinicName}`}
     >
       <div className="container px-4 sm:px-6">
         <div className="mx-auto max-w-lg">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-card p-5 shadow-card sm:p-8 md:rounded-3xl md:p-10"
-          >
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-card sm:p-8 md:rounded-3xl md:p-10">
             <div className="mb-6 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600 sm:text-sm">
                 <Flame className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
@@ -171,13 +166,16 @@ const BookingSection = () => {
                     <SelectValue placeholder="Choisir un soin..." />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="Implantologie">Implantologie</SelectItem>
+                    <SelectItem value="Facettes">Facettes</SelectItem>
                     <SelectItem value="Blanchiment dentaire">Blanchiment dentaire</SelectItem>
-                    <SelectItem value="Implants dentaires">Implants dentaires</SelectItem>
-                    <SelectItem value="Hollywood Smile">Hollywood Smile</SelectItem>
-                    <SelectItem value="Orthodontie Invisalign">Orthodontie Invisalign</SelectItem>
-                    <SelectItem value="Facettes dentaires">Facettes dentaires</SelectItem>
-                    <SelectItem value="Urgence dentaire">Urgence dentaire</SelectItem>
-                    <SelectItem value="Soins generaux">Soins generaux / Detartrage</SelectItem>
+                    <SelectItem value="Orthodontie">Orthodontie</SelectItem>
+                    <SelectItem value="Chirurgie orale">Chirurgie orale</SelectItem>
+                    <SelectItem value="Parodontologie">Parodontologie</SelectItem>
+                    <SelectItem value="Protheses dentaires">Protheses dentaires</SelectItem>
+                    <SelectItem value="Endodontie (devitalisation)">Endodontie (devitalisation)</SelectItem>
+                    <SelectItem value="Detartrage">Detartrage</SelectItem>
+                    <SelectItem value="Urgences dentaires">Urgences dentaires</SelectItem>
                     <SelectItem value="Autre / Je ne sais pas">Autre / Je ne sais pas encore</SelectItem>
                   </SelectContent>
                 </Select>
@@ -227,7 +225,7 @@ const BookingSection = () => {
               <span aria-hidden="true">·</span>
               <span>Reponse en 30 min</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

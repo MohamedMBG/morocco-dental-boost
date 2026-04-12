@@ -43,8 +43,8 @@ const reviews = [
     avatar: "H",
     rating: 4,
     date: "Il y a 2 mois",
-    text: "Tres bon suivi pour mon traitement Invisalign. Les resultats sont deja visibles apres 3 mois. Le seul bemol : le parking est un peu complique dans le quartier.",
-    service: "Orthodontie Invisalign",
+    text: "Tres bon suivi pour mon traitement d'orthodontie. Les resultats sont deja visibles apres 3 mois. Le seul bemol : le parking est un peu complique dans le quartier.",
+    service: "Orthodontie",
     helpful: 4,
   },
   {
@@ -52,8 +52,8 @@ const reviews = [
     avatar: "L",
     rating: 5,
     date: "Il y a 5 jours",
-    text: "Hollywood Smile parfait. Mes amies n'en reviennent pas du resultat. Le Dr EL Mehdi FATIH est un vrai artiste. Je recommande les yeux fermes a toute personne qui hesite.",
-    service: "Hollywood Smile",
+    text: "Mes facettes sont parfaites. Mes amies n'en reviennent pas du resultat. Le Dr EL Mehdi FATIH est un vrai artiste. Je recommande les yeux fermes a toute personne qui hesite.",
+    service: "Facettes",
     helpful: 19,
   },
 ];

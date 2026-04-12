@@ -6,6 +6,7 @@ import clinicTourPoster from "@/assets/IMG_9241.optimized.jpg";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasRequestedVideo, setHasRequestedVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayToggle = () => {
@@ -16,6 +17,7 @@ const VideoSection = () => {
       return;
     }
 
+    setHasRequestedVideo(true);
     void videoRef.current.play();
   };
 
@@ -47,9 +49,9 @@ const VideoSection = () => {
               onEnded={() => setIsPlaying(false)}
               controls={isPlaying}
               playsInline
-              preload="metadata"
+              preload="none"
             >
-              <source src={clinicTourVideo} type="video/mp4" />
+              {hasRequestedVideo ? <source src={clinicTourVideo} type="video/mp4" /> : null}
               Votre navigateur ne supporte pas la lecture video.
             </video>
 
@@ -59,7 +61,7 @@ const VideoSection = () => {
                 className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-trust/50 transition-colors hover:bg-trust/40"
                 aria-label="Lire la video de la clinique"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-cta animate-pulse-glow md:h-24 md:w-24">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-cta md:h-24 md:w-24">
                   <Play className="ml-1 h-8 w-8 text-primary-foreground md:h-10 md:w-10" />
                 </div>
                 <span className="mt-4 font-heading text-sm font-semibold text-primary-foreground/90">

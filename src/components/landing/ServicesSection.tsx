@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Sparkles, Shield, Smile, Zap, HeartPulse, ScanFace, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
@@ -7,32 +6,32 @@ const services = [
   {
     icon: Sparkles,
     title: "Blanchiment Dentaire",
-    desc: "Sourire eclatant en 1 seance laser. Resultats immediats et durables.",
+    desc: "Eclaircissement du sourire avec un protocole professionnel pour un resultat harmonieux.",
   },
   {
     icon: Shield,
-    title: "Implants Dentaires",
-    desc: "Implants en titane biocompatibles. Solutions permanentes et naturelles.",
+    title: "Implantologie",
+    desc: "Remplacement durable des dents manquantes avec une prise en charge precise et personnalisee.",
   },
   {
     icon: Smile,
-    title: "Orthodontie Invisalign",
-    desc: "Aligneurs invisibles Invisalign pour un sourire parfait, sans metal.",
+    title: "Orthodontie",
+    desc: "Correction de l'alignement dentaire pour ameliorer l'esthetique et la fonction.",
   },
   {
     icon: Zap,
     title: "Urgences Dentaires",
-    desc: "Prise en charge immediate 6j/7. Appelez ou contactez via WhatsApp.",
+    desc: "Prise en charge rapide pour douleur, fracture, infection ou autre urgence dentaire.",
   },
   {
     icon: HeartPulse,
-    title: "Soins Generaux",
-    desc: "Detartrage, traitement des caries, controle annuel complet.",
+    title: "Parodontologie",
+    desc: "Soins des gencives et prevention pour proteger durablement votre sante bucco-dentaire.",
   },
   {
     icon: ScanFace,
-    title: "Hollywood Smile",
-    desc: "Facettes en ceramique et Hollywood Smile. Sourire de star en quelques seances.",
+    title: "Facettes",
+    desc: "Facettes esthetiques pour harmoniser la forme, la teinte et l'eclat du sourire.",
   },
 ];
 
@@ -49,19 +48,16 @@ const ServicesSection = () => {
             Soins Dentaires a Rabat - Tous traitements
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Blanchiment, implants, Hollywood Smile, orthodontie et plus. Traitements
-            modernes avec des materiaux de haute qualite.
+            Services principaux: implantologie, facettes, blanchiment dentaire. Le
+            cabinet propose egalement orthodontie, chirurgie orale, parodontologie,
+            protheses, endodontie, detartrage et urgences dentaires.
           </p>
         </div>
 
         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
           {services.map((service, i) => (
-            <motion.div
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
               className="group cursor-pointer rounded-xl border border-border bg-card p-6 shadow-card transition-colors hover:border-primary/30"
               onClick={() => {
                 trackButtonClick({
@@ -83,7 +79,7 @@ const ServicesSection = () => {
               </div>
               <h3 className="font-heading font-bold text-foreground">{service.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{service.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

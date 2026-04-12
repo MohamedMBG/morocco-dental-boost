@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 import { trackButtonClick } from "@/lib/analytics";
+import { clinicInfo } from "@/lib/clinic-info";
 
 const Footer = () => {
   return (
@@ -7,10 +8,10 @@ const Footer = () => {
       <div className="container">
         <div className="mx-auto grid max-w-4xl gap-8 text-center md:grid-cols-3 md:text-left">
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold">ORIS DENTAL CENTER</h3>
+            <h3 className="mb-3 font-heading text-lg font-bold">{clinicInfo.clinicName}</h3>
             <p className="mb-3 text-sm text-trust-foreground/60">
-              Clinique dentaire a Rabat dirigee par Dr EL MEHDI FATIH. Implants,
-              blanchiment, facettes et soins dentaires.
+              Clinique dentaire a Rabat dirigee par {clinicInfo.doctorName}. Implantologie,
+              facettes, blanchiment dentaire et soins dentaires complets.
             </p>
             <nav aria-label="Liens de navigation rapide">
               <ul className="space-y-1 text-sm text-trust-foreground/70">
@@ -49,45 +50,45 @@ const Footer = () => {
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <a
-                href="tel:+212631581901"
+                href={clinicInfo.landlineHref}
                 className="transition-colors hover:text-trust-foreground"
                 onClick={() =>
                   trackButtonClick({
                     buttonId: "footer-phone-link",
-                    buttonText: "+212 631-581901",
+                    buttonText: clinicInfo.landlineDisplay,
                     buttonLocation: "footer",
                     actionType: "phone_call",
-                    destination: "tel:+212631581901",
+                    destination: clinicInfo.landlineHref,
                   })
                 }
               >
-                +212 631-581901
+                {clinicInfo.landlineDisplay}
               </a>
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <MessageCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <a
-                href="https://wa.me/212631581901"
+                href={clinicInfo.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-trust-foreground"
-                aria-label="Contacter ORIS DENTAL CENTER sur WhatsApp"
+                aria-label={`Contacter ${clinicInfo.clinicName} sur WhatsApp`}
                 onClick={() =>
                   trackButtonClick({
                     buttonId: "footer-whatsapp-link",
-                    buttonText: "WhatsApp",
+                    buttonText: clinicInfo.whatsappDisplay,
                     buttonLocation: "footer",
                     actionType: "whatsapp",
-                    destination: "https://wa.me/212631581901",
+                    destination: clinicInfo.whatsappHref,
                   })
                 }
               >
-                WhatsApp
+                {clinicInfo.whatsappDisplay}
               </a>
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Clock className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              <span>Lun-Ven : 8h-20h | Sam : 8h-18h</span>
+              <span>{clinicInfo.hoursDetailed}</span>
             </div>
           </address>
 
@@ -96,9 +97,9 @@ const Footer = () => {
             <p className="mt-1">Clinique agreee par le Ministere de la Sante du Maroc</p>
             <p className="mt-3 text-xs">
               <span className="font-semibold text-trust-foreground/70">
-                Dentiste a Rabat Hay Riad - Dr EL MEHDI FATIH
+                Dentiste a Rabat Hay Riad - {clinicInfo.doctorName}
               </span>{" "}
-              - Implants, blanchiment, facettes
+              - Implantologie, blanchiment, facettes
             </p>
           </div>
         </div>

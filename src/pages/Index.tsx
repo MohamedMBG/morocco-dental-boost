@@ -1,28 +1,36 @@
+import { Suspense, lazy } from "react";
 import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
 import TrustBar from "@/components/landing/TrustBar";
 import ServicesSection from "@/components/landing/ServicesSection";
-import VideoSection from "@/components/landing/VideoSection";
 import ClinicSection from "@/components/landing/ClinicSection";
-import ReviewsSection from "@/components/landing/ReviewsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import BookingSection from "@/components/landing/BookingSection";
 import GoogleMapSection from "@/components/landing/GoogleMapSection";
 import Footer from "@/components/landing/Footer";
 
+const VideoSection = lazy(() => import("@/components/landing/VideoSection"));
+const ReviewsSection = lazy(() => import("@/components/landing/ReviewsSection"));
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <HeroSection />
-      <TrustBar />
-      <ServicesSection />
-      <VideoSection />
-      <ClinicSection />
-      <ReviewsSection />
-      <FAQSection />
-      <BookingSection />
-      <GoogleMapSection />
+      <main id="main-content">
+        <HeroSection />
+        <TrustBar />
+        <ServicesSection />
+        <Suspense fallback={<div className="bg-background py-16 md:py-24" aria-hidden="true" />}>
+          <VideoSection />
+        </Suspense>
+        <ClinicSection />
+        <Suspense fallback={<div className="bg-secondary/30 py-16 md:py-24" aria-hidden="true" />}>
+          <ReviewsSection />
+        </Suspense>
+        <FAQSection />
+        <BookingSection />
+        <GoogleMapSection />
+      </main>
       <Footer />
     </div>
   );

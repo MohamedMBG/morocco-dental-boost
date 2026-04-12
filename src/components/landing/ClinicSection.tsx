@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
+import { clinicInfo } from "@/lib/clinic-info";
 import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
 import clinicDetailA from "@/assets/IMG_9234.optimized.jpg";
 import clinicDetailB from "@/assets/IMG_9279.optimized.jpg";
@@ -26,12 +26,7 @@ const ClinicSection = () => {
     <section className="bg-secondary/30 py-16 md:py-24">
       <div className="container">
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.15fr_0.95fr]">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
+          <div className="space-y-4">
             <img
               src={clinicMain}
               alt="Clinique dentaire moderne a Rabat Hay Riad"
@@ -56,28 +51,19 @@ const ClinicSection = () => {
                 />
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-5"
-          >
+          <div className="space-y-5">
             <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-              Une clinique a la pointe de la technologie
+              Expertise, confort et precision
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Decouvrez nos vrais espaces de soin a Rabat Hay Riad: environnement soigne,
-              fauteuils modernes, imagerie de precision et parcours patient pense pour le
-              confort du premier accueil jusqu'au suivi.
+              {clinicInfo.doctorName} met a votre service 10 ans d'experience, une
+              formation universitaire solide a Rabat et un diplome universitaire en
+              implantologie pour vous proposer des soins precis et rassurants.
             </p>
             <ul className="space-y-2 text-sm text-foreground">
-              {[
-                "Scanner 3D et radiographie numerique",
-                "Salle de sterilisation aux normes internationales",
-                "Ambiance calme et accueil chaleureux",
-              ].map((item) => (
+              {clinicInfo.credentials.map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {item}
@@ -99,7 +85,7 @@ const ClinicSection = () => {
             >
               Prendre RDV
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

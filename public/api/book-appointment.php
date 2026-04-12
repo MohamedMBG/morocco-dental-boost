@@ -10,12 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$configPath = dirname(__DIR__, 2) . '/mail-config.php';
+$rootPath = dirname(__DIR__, 2);
+$configPath = $rootPath . '/mail-config.php';
+$exampleConfigPath = $rootPath . '/mail-config.example.php';
 
 if (!file_exists($configPath)) {
-    http_response_code(500);
-    echo json_encode(['message' => "Configuration email manquante sur le serveur."]);
-    exit;
+    if (file_exists($exampleConfigPath)) {
+        $configPath = $exampleConfigPath;
+    } else {
+        http_response_code(500);
+        echo json_encode(['message' => "Configuration email manquante sur le serveur."]);
+        exit;
+    }
 }
 
 $config = require $configPath;
@@ -127,7 +133,7 @@ function send_smtp_mail(array $config, string $name, string $phone, string $pref
     $host = (string) ($config['smtp_host'] ?? 'smtp.gmail.com');
     $port = (int) ($config['smtp_port'] ?? 465);
     $secure = strtolower((string) ($config['smtp_secure'] ?? 'ssl'));
-    $fromName = (string) ($config['from_name'] ?? 'ORIS Dental Website');
+    $fromName = (string) ($config['from_name'] ?? 'ORIS Dental Center Website');
 
     if ($recipient === '' || $username === '' || $password === '') {
         throw new RuntimeException('Parametres SMTP incomplets.');

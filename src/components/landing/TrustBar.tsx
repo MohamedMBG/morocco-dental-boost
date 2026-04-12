@@ -1,31 +1,27 @@
-import { motion } from "framer-motion";
 import { Users, Award, MapPin, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "1 200+", label: "Patients traités" },
-  { icon: Award, value: "15+", label: "Ans d'expérience" },
+  { icon: Users, value: "1 200+", label: "Patients traites" },
+  { icon: Award, value: "15+", label: "Ans d'experience" },
   { icon: MapPin, value: "Rabat", label: "Centre-ville" },
-  { icon: Clock, value: "6j/7", label: "Disponibilité" },
+  { icon: Clock, value: "6j/7", label: "Disponibilite" },
 ];
 
 const TrustBar = () => {
   return (
-    <section className="bg-trust text-trust-foreground py-8">
+    <section className="bg-trust py-8 text-trust-foreground">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {stats.map((stat, i) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center text-center gap-2"
+              className="flex flex-col items-center gap-2 text-center motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
+              style={{ animationDelay: `${i * 120}ms`, animationFillMode: "both" }}
             >
-              <stat.icon className="w-6 h-6 text-primary-foreground/70" />
-              <span className="font-heading text-2xl md:text-3xl font-extrabold">{stat.value}</span>
+              <stat.icon className="h-6 w-6 text-primary-foreground/70" />
+              <span className="font-heading text-2xl font-extrabold md:text-3xl">{stat.value}</span>
               <span className="text-sm text-primary-foreground/60">{stat.label}</span>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
