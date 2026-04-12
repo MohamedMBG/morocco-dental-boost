@@ -45,7 +45,14 @@ const Footer = () => {
           <address className="not-italic space-y-2 text-sm text-trust-foreground/70">
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              <span>Hay Riad, Rabat 10000</span>
+              <a
+                href={clinicInfo.mapsDirectionsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-trust-foreground"
+              >
+                {clinicInfo.addressShort}
+              </a>
             </div>
             <div className="flex items-center justify-center gap-2 md:justify-start">
               <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />

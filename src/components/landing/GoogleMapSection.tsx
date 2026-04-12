@@ -12,15 +12,16 @@ const GoogleMapSection = () => {
             {clinicInfo.clinicName} a Rabat
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Situe a Rabat Hay Riad, {clinicInfo.clinicName} est facile d'acces pour une
-            consultation dentaire, un controle ou une urgence.
+            Situe a l'angle Av. Al Araar et Av. Ben Barka a Hay Riad,{" "}
+            {clinicInfo.clinicName} est facile d'acces pour une consultation
+            dentaire, un controle ou une urgence.
           </p>
         </div>
 
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-5">
           <div className="h-[350px] overflow-hidden rounded-2xl border border-border shadow-card md:col-span-3 md:h-[420px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.5!2d-6.8498!3d33.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU4JzE3LjgiTiA2wrA1MCc1OS4zIlc!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma"
+              src={clinicInfo.mapsEmbedHref}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -40,9 +41,11 @@ const GoogleMapSection = () => {
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Adresse</h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    Hay Riad
+                    Angle Av. Al Araar et Av. Ben Barka
                     <br />
-                    Rabat, Maroc
+                    Residence Dounia A, Appt 12, 3eme etage
+                    <br />
+                    Hay Riad, Rabat 10100
                   </p>
                 </div>
               </div>
@@ -90,7 +93,7 @@ const GoogleMapSection = () => {
             <div className="mt-6 space-y-2">
               <Button className="w-full gap-2 font-bold" asChild>
                 <a
-                  href="https://www.google.com/maps/dir//33.9716,-6.8498"
+                  href={clinicInfo.mapsDirectionsHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() =>
@@ -99,7 +102,7 @@ const GoogleMapSection = () => {
                       buttonText: "Itineraire Google Maps",
                       buttonLocation: "location",
                       actionType: "maps_direction",
-                      destination: "https://www.google.com/maps/dir//33.9716,-6.8498",
+                      destination: clinicInfo.mapsDirectionsHref,
                     })
                   }
                 >
