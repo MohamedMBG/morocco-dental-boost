@@ -87,7 +87,7 @@ const ServicesSection = () => {
           <Button
             id="services-cta"
             size="lg"
-            className="font-heading font-bold shadow-cta"
+            className="btn-rdv-blue font-heading font-bold shadow-cta"
             onClick={() => {
               trackButtonClick({
                 buttonId: "services-cta",

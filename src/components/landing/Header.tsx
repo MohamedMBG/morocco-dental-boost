@@ -7,16 +7,14 @@ const Header = () => {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-card/95">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <span className="font-heading text-lg font-bold text-primary-foreground">OD</span>
-          </div>
-          <div className="leading-tight">
-            <span className="block font-heading text-sm font-bold uppercase tracking-[0.18em] text-foreground">
-              {clinicInfo.clinicName}
-            </span>
-            <span className="block text-xs text-muted-foreground">{clinicInfo.doctorName}</span>
-          </div>
+        <div className="flex items-center">
+          <img
+            src="/logo%201.png"
+            alt={`${clinicInfo.clinicName} logo`}
+            className="h-20 w-auto object-contain"
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         <div className="flex items-center gap-3">
@@ -38,7 +36,7 @@ const Header = () => {
           </a>
           <Button
             size="sm"
-            className="font-heading font-semibold shadow-cta"
+            className="btn-rdv-blue font-heading font-semibold shadow-cta"
             asChild
           >
             <a

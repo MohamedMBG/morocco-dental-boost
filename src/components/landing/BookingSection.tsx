@@ -205,7 +205,7 @@ const BookingSection = () => {
                 id="booking-submit"
                 type="submit"
                 size="lg"
-                className="mt-2 h-14 w-full gap-2 text-base font-bold shadow-cta"
+                className="btn-rdv-blue mt-2 h-14 w-full gap-2 text-base font-bold shadow-cta"
                 aria-label="Envoyer ma demande de RDV"
                 disabled={isSubmitting}
               >

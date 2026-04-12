@@ -4,49 +4,52 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 96%;
+    --foreground: 217 100% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 217 100% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 217 100% 17%;
 
-    --primary: 213 80% 50%;
+    --primary: 217 100% 17%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 30% 95%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 217 100% 17%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 30 1% 49%;
 
-    --accent: 38 92% 55%;
+    --accent: 30 1% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 213 80% 50%;
+    --border: 30 1% 76%;
+    --input: 30 1% 76%;
+    --ring: 217 100% 17%;
 
     --radius: 0.75rem;
 
     --whatsapp: 142 70% 45%;
     --whatsapp-foreground: 0 0% 100%;
 
-    --trust: 215 25% 20%;
+    --trust: 30 1% 49%;
     --trust-foreground: 0 0% 100%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(213 80% 50%) 0%, hsl(220 70% 40%) 100%);
-    --gold: 38 92% 55%;
-    --gold-foreground: 38 92% 20%;
+    --hero-gradient: linear-gradient(135deg, hsl(200 96% 45%) 0%, hsl(217 100% 17%) 100%);
+    --gold: 30 1% 49%;
+    --gold-foreground: 0 0% 100%;
 
-    --shadow-soft: 0 4px 20px -4px hsl(213 80% 50% / 0.15);
-    --shadow-card: 0 8px 30px -8px hsl(215 25% 15% / 0.08);
-    --shadow-cta: 0 8px 24px -4px hsl(213 80% 50% / 0.4);
+    --brand-teal: 174 58% 44%;
+    --brand-teal-foreground: 0 0% 100%;
+
+    --shadow-soft: 0 4px 20px -4px hsl(217 100% 17% / 0.16);
+    --shadow-card: 0 8px 30px -8px hsl(217 100% 17% / 0.1);
+    --shadow-cta: 0 8px 24px -4px hsl(217 100% 17% / 0.28);
 
     --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -95,5 +98,14 @@
 
   .shadow-soft {
     box-shadow: var(--shadow-soft);
+  }
+
+  .btn-rdv-blue {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-rdv-blue:hover {
+    background-color: hsl(217 100% 13%);
   }
 }

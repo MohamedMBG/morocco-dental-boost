@@ -112,7 +112,7 @@ const GoogleMapSection = () => {
               </Button>
               <Button
                 variant="outline"
-                className="w-full border-primary/30 font-semibold text-primary hover:bg-primary/5"
+                className="btn-rdv-blue w-full border-primary font-semibold text-white hover:text-white"
                 onClick={() => {
                   trackButtonClick({
                     buttonId: "location-booking-cta",

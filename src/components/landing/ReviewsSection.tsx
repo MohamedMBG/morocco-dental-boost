@@ -80,7 +80,7 @@ const ReviewsSection = () => {
           <div className="mt-4 flex items-center justify-center gap-3">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-gold text-gold" />
+                <Star key={i} className="h-5 w-5 fill-[#0596de] text-[#0596de]" />
               ))}
             </div>
             <span className="font-heading text-xl font-bold text-foreground">4.9</span>
@@ -115,7 +115,7 @@ const ReviewsSection = () => {
                   <div className="mt-0.5 flex items-center gap-2">
                     <div className="flex gap-0.5">
                       {[...Array(review.rating)].map((_, j) => (
-                        <Star key={j} className="h-3 w-3 fill-gold text-gold" />
+                        <Star key={j} className="h-3 w-3 fill-[#0596de] text-[#0596de]" />
                       ))}
                     </div>
                     <span className="text-xs text-muted-foreground">{review.date}</span>

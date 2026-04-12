@@ -52,7 +52,7 @@ const HeroSection = () => {
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                  <Star key={i} className="h-4 w-4 fill-[#0596de] text-[#0596de]" />
                 ))}
               </div>
               <span>
@@ -64,7 +64,7 @@ const HeroSection = () => {
               <Button
                 id="hero-cta-booking"
                 size="lg"
-                className="w-full px-8 text-base font-bold shadow-cta sm:w-auto"
+                className="btn-rdv-blue w-full px-8 text-base font-bold shadow-cta sm:w-auto"
                 onClick={() => {
                   trackButtonClick({
                     buttonId: "hero-cta-booking",
@@ -151,9 +151,9 @@ const HeroSection = () => {
 
                 <div className="absolute -bottom-4 -left-2 rounded-2xl border border-border bg-card p-4 shadow-card">
                   <div className="flex items-center gap-2">
-                    <div className="flex text-gold">
+                    <div className="flex text-[#0596de]">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                        <Star key={i} className="h-4 w-4 fill-[#0596de] text-[#0596de]" />
                       ))}
                     </div>
                     <span className="font-heading font-bold text-foreground">4.9</span>

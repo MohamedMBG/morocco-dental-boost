@@ -71,7 +71,7 @@ const ClinicSection = () => {
               ))}
             </ul>
             <Button
-              className="font-heading font-bold shadow-cta"
+              className="btn-rdv-blue font-heading font-bold shadow-cta"
               onClick={() => {
                 trackButtonClick({
                   buttonId: "clinic-cta",

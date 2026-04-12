@@ -3,12 +3,9 @@ export const clinicInfo = {
   doctorName: "Dr EL MEHDI FATIH",
   addressDisplay: "Angle Av. Al Araar et Av. Ben Barka, Residence Dounia A, Appt 12, 3eme etage, Hay Riad, Rabat 10100",
   addressShort: "Angle Av. Al Araar et Av. Ben Barka, Hay Riad, Rabat 10100",
-  mapsQuery:
-    "Angle Av. Al Araar et Av. Ben Barka, Residence Dounia A Appt 12 3eme etage, Hay Riad Rabat 10100",
   mapsEmbedHref:
     "https://www.google.com/maps?q=Angle%20Av.%20Al%20Araar%20et%20Av.%20Ben%20Barka%2C%20Residence%20Dounia%20A%20Appt%2012%203eme%20etage%2C%20Hay%20Riad%20Rabat%2010100&output=embed",
-  mapsDirectionsHref:
-    "https://www.google.com/maps/dir/?api=1&destination=Angle%20Av.%20Al%20Araar%20et%20Av.%20Ben%20Barka%2C%20Residence%20Dounia%20A%20Appt%2012%203eme%20etage%2C%20Hay%20Riad%20Rabat%2010100",
+  mapsDirectionsHref: "https://maps.app.goo.gl/Q9aGHZFjwcEMpvc27",
   landlineDisplay: "0537 57 10 00",
   landlineHref: "tel:+212537571000",
   whatsappDisplay: "06 11 97 97 53",
