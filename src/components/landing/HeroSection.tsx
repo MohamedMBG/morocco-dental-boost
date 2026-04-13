@@ -4,7 +4,7 @@ import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
 import heroPortrait from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
 import heroClinicA from "@/assets/IMG_9182.optimized.jpg";
-import heroClinicB from "@/assets/IMG_9348.optimized.jpg";
+import heroClinicB from "@/assets/IMG_9269.jpeg";
 
 const HeroSection = () => {
   return (
@@ -25,13 +25,11 @@ const HeroSection = () => {
             </span>
 
             <h1 className="font-heading text-4xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              Le sourire que vous <span className="text-gradient-primary">meritez</span>
+              Le dentiste ou vous venez <span className="text-gradient-primary">sans stress</span>
             </h1>
 
             <p className="max-w-lg text-lg text-muted-foreground">
-              {clinicInfo.doctorName} vous accueille a {clinicInfo.clinicName} a Rabat Hay
-              Riad pour vos soins en implantologie, facettes, blanchiment dentaire et
-              traitements dentaires avec un accompagnement personnalise.
+              Une prise en charge humaine, rassurante et professionnelle du debut a la fin.
             </p>
 
             <ul className="space-y-3">
@@ -68,7 +66,7 @@ const HeroSection = () => {
                 onClick={() => {
                   trackButtonClick({
                     buttonId: "hero-cta-booking",
-                    buttonText: "Prendre RDV",
+                    buttonText: "Reserver ma consultation",
                     buttonLocation: "hero",
                     actionType: "scroll_to_booking",
                     destination: "#booking",
@@ -78,7 +76,7 @@ const HeroSection = () => {
                 aria-label={`Prendre RDV a ${clinicInfo.clinicName}`}
               >
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                Prendre RDV
+                Reserver ma consultation
               </Button>
 
               <Button
@@ -131,9 +129,9 @@ const HeroSection = () => {
                         <Star key={i} className="h-4 w-4 fill-[#0596de] text-[#0596de]" />
                       ))}
                     </div>
-                    <span className="font-heading font-bold text-foreground">4.9</span>
+                    <span className="font-body text-lg font-bold text-foreground">4.9</span>
                   </div>
-                  <p className="mt-0.5 text-xs text-muted-foreground">+1 200 patients satisfaits</p>
+                  <p className="mt-0.5 font-body text-xs text-muted-foreground">+1 200 patients satisfaits</p>
                 </div>
               </div>
 

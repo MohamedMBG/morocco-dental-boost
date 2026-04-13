@@ -19,8 +19,8 @@ const TrustBar = () => {
               style={{ animationDelay: `${i * 120}ms`, animationFillMode: "both" }}
             >
               <stat.icon className="h-6 w-6 text-primary-foreground/70" />
-              <span className="font-heading text-2xl font-extrabold md:text-3xl">{stat.value}</span>
-              <span className="text-sm text-primary-foreground/60">{stat.label}</span>
+              <span className="font-body text-2xl font-extrabold md:text-3xl">{stat.value}</span>
+              <span className="font-body text-sm text-primary-foreground/60">{stat.label}</span>
             </div>
           ))}
         </div>

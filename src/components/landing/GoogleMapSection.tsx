@@ -28,7 +28,7 @@ const GoogleMapSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={`Localisation ${clinicInfo.clinicName} Rabat`}
+              title={`Carte ${clinicInfo.clinicName} Rabat`}
             />
           </div>
 
@@ -107,7 +107,7 @@ const GoogleMapSection = () => {
                   }
                 >
                   <Navigation className="h-4 w-4" />
-                  Itineraire Google Maps
+                  Ouvrir la fiche Google Maps
                 </a>
               </Button>
               <Button

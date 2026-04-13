@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
 import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
-import clinicDetailA from "@/assets/IMG_9234.optimized.jpg";
+import clinicDetailA from "@/assets/IMG_9157.jpeg";
 import clinicDetailB from "@/assets/IMG_9279.optimized.jpg";
-import clinicDetailC from "@/assets/IMG_9412.optimized.jpg";
+import clinicDetailC from "@/assets/IMG_9135.jpeg";
 
 const gallery = [
   {
@@ -18,6 +18,34 @@ const gallery = [
   {
     src: clinicDetailC,
     alt: "Vue detaillee d'une salle de traitement moderne",
+  },
+];
+
+const reasons = [
+  {
+    title: "Des soins reellement sans douleur",
+    description:
+      "Chaque geste est maitrise pour garantir votre confort. Meme les patients les plus anxieux ressortent surpris : ils n’ont rien ressenti.",
+  },
+  {
+    title: "Vous comprenez exactement ce qu’on fait",
+    description:
+      "On prend le temps de vous expliquer chaque etape simplement. Vous avancez en toute confiance, sans stress ni zone d’ombre.",
+  },
+  {
+    title: "Une prise en charge rapide, meme en urgence",
+    description:
+      "Douleur, infection, extraction, vous etes traite rapidement et efficacement. Pas d’attente inutile, pas de negligence.",
+  },
+  {
+    title: "Des resultats naturels et durables",
+    description:
+      "Implants, couronnes, soins esthetiques, le travail est precis, discret et pense pour durer dans le temps.",
+  },
+  {
+    title: "Une vraie ecoute, sans pression",
+    description:
+      "Ici, vous n’etes jamais presse ni pousse a faire un soin. On vous conseille, vous decidez.",
   },
 ];
 
@@ -55,27 +83,25 @@ const ClinicSection = () => {
 
           <div className="space-y-5">
             <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-              Expertise, confort et precision
+              Pourquoi nos patients ne changent plus de dentiste ?
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              {clinicInfo.doctorName} met a votre service 10 ans d'experience, une
-              formation universitaire solide a Rabat et un diplome universitaire en
-              implantologie pour vous proposer des soins precis et rassurants.
+              Une experience pensee pour rassurer, expliquer, soulager rapidement et offrir des soins qui durent.
             </p>
-            <ul className="space-y-2 text-sm text-foreground">
-              {clinicInfo.credentials.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  {item}
-                </li>
+            <div className="space-y-4">
+              {reasons.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-border bg-card/70 p-4 shadow-card">
+                  <h3 className="font-heading text-base font-bold text-foreground">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                </div>
               ))}
-            </ul>
+            </div>
             <Button
               className="btn-rdv-blue font-heading font-bold shadow-cta"
               onClick={() => {
                 trackButtonClick({
                   buttonId: "clinic-cta",
-                  buttonText: "Prendre RDV",
+                  buttonText: "Reserver ma consultation",
                   buttonLocation: "clinic",
                   actionType: "scroll_to_booking",
                   destination: "#booking",
@@ -83,7 +109,7 @@ const ClinicSection = () => {
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Prendre RDV
+              Reserver ma consultation
             </Button>
           </div>
         </div>

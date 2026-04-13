@@ -43,22 +43,22 @@ const ServicesSection = () => {
       aria-label="Nos soins dentaires a Rabat"
     >
       <div className="container">
-        <div className="mb-12 text-center">
+        <div className="mb-10 text-center md:mb-12">
           <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
             Soins Dentaires a Rabat - Tous traitements
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-muted-foreground">
+          <p className="mx-auto mt-3 max-w-md px-2 text-sm leading-relaxed text-muted-foreground md:px-0 md:text-base">
             Services principaux: implantologie, facettes, blanchiment dentaire. Le
             cabinet propose egalement orthodontie, chirurgie orale, parodontologie,
             protheses, endodontie, detartrage et urgences dentaires.
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-6">
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="group cursor-pointer rounded-xl border border-border bg-card p-6 shadow-card transition-colors hover:border-primary/30"
+              className="group cursor-pointer rounded-2xl border border-border bg-card p-4 shadow-card transition-colors hover:border-primary/30 sm:p-5 md:p-6"
               onClick={() => {
                 trackButtonClick({
                   buttonId: `service-card-${i + 1}`,
@@ -74,16 +74,18 @@ const ServicesSection = () => {
               tabIndex={0}
               aria-label={`Prendre RDV pour ${service.title}`}
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <service.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20 sm:mb-4 sm:h-12 sm:w-12">
+                <service.icon className="h-5 w-5 text-primary sm:h-6 sm:w-6" aria-hidden="true" />
               </div>
-              <h3 className="font-heading font-bold text-foreground">{service.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{service.desc}</p>
+              <h3 className="font-heading text-base font-bold leading-snug text-foreground sm:text-lg">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center md:mt-10">
           <Button
             id="services-cta"
             size="lg"
