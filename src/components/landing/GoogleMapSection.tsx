@@ -9,12 +9,11 @@ const GoogleMapSection = () => {
       <div className="container">
         <div className="mb-10 text-center">
           <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-            {clinicInfo.clinicName} a Rabat
+            {clinicInfo.clinicName} à Rabat
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Situe a l'angle Av. Al Araar et Av. Ben Barka a Hay Riad,{" "}
-            {clinicInfo.clinicName} est facile d'acces pour une consultation
-            dentaire, un controle ou une urgence.
+            Située à l'angle Av. Al Araar et Av. Ben Barka à Hay Riad, {clinicInfo.clinicName} est facile
+            d'accès pour une consultation dentaire, un contrôle ou une urgence.
           </p>
         </div>
 
@@ -43,7 +42,7 @@ const GoogleMapSection = () => {
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     Angle Av. Al Araar et Av. Ben Barka
                     <br />
-                    Residence Dounia A, Appt 12, 3eme etage
+                    Résidence Dounia A, Appt 12, 3ème étage
                     <br />
                     Hay Riad, Rabat 10100
                   </p>
@@ -58,7 +57,7 @@ const GoogleMapSection = () => {
                   <h3 className="text-sm font-bold text-foreground">Horaires</h3>
                   <div className="mt-0.5 space-y-0.5 text-sm text-muted-foreground">
                     <p>{clinicInfo.hoursDetailed}</p>
-                    <p className="font-medium text-destructive">Dimanche : Ferme</p>
+                    <p className="font-medium text-destructive">Dimanche : Fermé</p>
                   </div>
                 </div>
               </div>
@@ -99,7 +98,7 @@ const GoogleMapSection = () => {
                   onClick={() =>
                     trackButtonClick({
                       buttonId: "location-maps-cta",
-                      buttonText: "Itineraire Google Maps",
+                      buttonText: "Itinéraire Google Maps",
                       buttonLocation: "location",
                       actionType: "maps_direction",
                       destination: clinicInfo.mapsDirectionsHref,

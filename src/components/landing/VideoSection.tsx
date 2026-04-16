@@ -26,10 +26,10 @@ const VideoSection = () => {
       <div className="container">
         <div className="mb-10 text-center">
           <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-            Decouvrez notre clinique
+            Découvrez notre clinique
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Une video reelle de la clinique, de l'ambiance et de nos installations a Rabat.
+            Une vidéo réelle de la clinique, de l'ambiance et de nos installations à Rabat.
           </p>
         </div>
 
@@ -52,20 +52,20 @@ const VideoSection = () => {
               preload="none"
             >
               {hasRequestedVideo ? <source src={clinicTourVideo} type="video/mp4" /> : null}
-              Votre navigateur ne supporte pas la lecture video.
+              Votre navigateur ne supporte pas la lecture vidéo.
             </video>
 
             {!isPlaying && (
               <button
                 onClick={handlePlayToggle}
                 className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-trust/50 transition-colors hover:bg-trust/40"
-                aria-label="Lire la video de la clinique"
+                aria-label="Lire la vidéo de la clinique"
               >
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-cta md:h-24 md:w-24">
                   <Play className="ml-1 h-8 w-8 text-primary-foreground md:h-10 md:w-10" />
                 </div>
                 <span className="mt-4 font-heading text-sm font-semibold text-primary-foreground/90">
-                  Regarder la video
+                  Regarder la vidéo
                 </span>
               </button>
             )}
@@ -74,7 +74,7 @@ const VideoSection = () => {
               <button
                 onClick={handlePlayToggle}
                 className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-background/90 text-foreground shadow-card transition hover:bg-background"
-                aria-label="Mettre la video en pause"
+                aria-label="Mettre la vidéo en pause"
               >
                 <Pause className="h-5 w-5" />
               </button>

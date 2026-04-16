@@ -7,39 +7,39 @@ import { clinicInfo } from "@/lib/clinic-info";
 
 const faqs = [
   {
-    question: "Combien coute un blanchiment dentaire a Rabat ?",
-    answer:
-      `Le prix d'un blanchiment dentaire a ${clinicInfo.clinicName} depend du traitement choisi. Contactez-nous pour une estimation personnalisee.`,
-  },
-  {
     question: "Comment prendre RDV ?",
     answer:
-      "Remplissez le formulaire de reservation ou envoyez-nous un message WhatsApp. Nous vous repondons en moins de 30 minutes pour confirmer votre jour de preference.",
+      "Remplissez le formulaire de réservation ou envoyez-nous un message WhatsApp. Nous vous répondons en moins de 30 minutes pour confirmer votre jour de préférence.",
   },
   {
-    question: "Faites-vous des implants dentaires a Rabat ?",
+    question: "Faites-vous des traitements en implantologie à Rabat ?",
     answer:
       "Oui. Le cabinet propose des traitements en implantologie pour remplacer une ou plusieurs dents manquantes avec une solution durable et naturelle.",
   },
   {
-    question: "Etes-vous disponibles pour les urgences dentaires ?",
+    question: "Proposez-vous des facettes et un blanchiment dentaire ?",
     answer:
-      "Oui, nous prenons en charge les urgences dentaires pendant les horaires du cabinet. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immediatement via WhatsApp ou par telephone.",
+      `Oui, ${clinicInfo.clinicName} propose des solutions esthétiques pour le sourire, notamment le blanchiment dentaire et les facettes, avec un plan de traitement personnalisé.`,
   },
   {
-    question: "Proposez-vous des solutions esthetiques pour le sourire a Rabat ?",
+    question: "Êtes-vous disponibles pour les urgences dentaires ?",
     answer:
-      `Oui, ${clinicInfo.clinicName} propose des solutions esthetiques pour le sourire, notamment blanchiment dentaire et facettes, avec un plan de traitement personnalise.`,
+      "Oui, nous prenons en charge les urgences dentaires pendant les horaires du cabinet. En cas de douleur intense, fracture dentaire ou autre urgence, contactez-nous immédiatement via WhatsApp ou par téléphone.",
+  },
+  {
+    question: "Combien coûte un blanchiment dentaire à Rabat ?",
+    answer:
+      `Le prix d'un blanchiment dentaire à ${clinicInfo.clinicName} dépend du traitement choisi. Contactez-nous pour une estimation personnalisée.`,
+  },
+  {
+    question: "Combien de médecins exercent à la clinique ?",
+    answer:
+      `${clinicInfo.doctorName} assure les soins au cabinet. Contactez-nous si vous souhaitez en savoir plus sur l'organisation des rendez-vous.`,
   },
   {
     question: "Quels sont les horaires de la clinique ?",
     answer:
-      `Notre clinique ${clinicInfo.clinicName} est situee a Rabat. Nous sommes ouverts de 9h a 18h.`,
-  },
-  {
-    question: "Qui est le docteur en charge des soins ?",
-    answer:
-      `${clinicInfo.doctorName} est laureat de la faculte de medecine dentaire de Rabat - Universite Mohamed V, titulaire d'un Diplome Universitaire d'implantologie et compte 10 ans d'experience.`,
+      `Notre clinique ${clinicInfo.clinicName} est située à Rabat. Nous sommes ouverts du lundi au vendredi de 09:00 à 18:00 et le samedi de 09:00 à 13:00.`,
   },
 ];
 
@@ -52,16 +52,16 @@ const FAQSection = () => {
     <section
       className="bg-background py-16 md:py-24"
       id="faq"
-      aria-label={`Questions frequentes - ${clinicInfo.clinicName}`}
+      aria-label={`Questions fréquentes - ${clinicInfo.clinicName}`}
     >
       <div className="container">
         <div className="mx-auto max-w-3xl">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-              Questions frequentes
+              Questions fréquentes
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Tout ce que vous devez savoir avant votre premiere visite a {clinicInfo.clinicName}.
+              Tout ce que vous devez savoir avant votre première visite à {clinicInfo.clinicName}.
             </p>
           </div>
 
@@ -127,7 +127,7 @@ const FAQSection = () => {
                 });
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
               }}
-              aria-label={`Prendre RDV a la clinique dentaire ${clinicInfo.clinicName}`}
+              aria-label={`Prendre RDV à la clinique dentaire ${clinicInfo.clinicName}`}
             >
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               Prendre RDV

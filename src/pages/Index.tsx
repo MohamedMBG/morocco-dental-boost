@@ -19,17 +19,27 @@ const Index = () => {
       <main id="main-content">
         <HeroSection />
         <TrustBar />
-        <ServicesSection />
+        <div className="cv-auto">
+          <ServicesSection />
+        </div>
         <Suspense fallback={<div className="bg-background py-16 md:py-24" aria-hidden="true" />}>
           <VideoSection />
         </Suspense>
-        <ClinicSection />
+        <div className="cv-auto">
+          <ClinicSection />
+        </div>
         <Suspense fallback={<div className="bg-secondary/30 py-16 md:py-24" aria-hidden="true" />}>
           <ReviewsSection />
         </Suspense>
-        <FAQSection />
-        <BookingSection />
-        <GoogleMapSection />
+        <div className="cv-auto">
+          <FAQSection />
+        </div>
+        <div className="cv-auto">
+          <BookingSection />
+        </div>
+        <div className="cv-auto">
+          <GoogleMapSection />
+        </div>
       </main>
       <Footer />
     </div>

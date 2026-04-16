@@ -17,7 +17,7 @@ const FloatingCTA = () => {
           onClick={() =>
             trackButtonClick({
               buttonId: "floating-phone-cta",
-              buttonText: "Appeler nous",
+              buttonText: "Appelez-nous",
               buttonLocation: "floating_cta",
               actionType: "phone_call",
               destination: clinicInfo.landlineHref,
@@ -25,7 +25,7 @@ const FloatingCTA = () => {
           }
         >
           <Phone className="h-4 w-4" />
-          Appeler nous
+          Appelez-nous
         </a>
       </Button>
     </div>

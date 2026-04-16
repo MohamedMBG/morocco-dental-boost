@@ -2,9 +2,9 @@ import { Check, Phone, Star, Flame, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
-import heroPortrait from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
+import heroPortrait from "@/assets/IMG_1909.optimized.jpg";
 import heroClinicA from "@/assets/IMG_9182.optimized.jpg";
-import heroClinicB from "@/assets/IMG_9269.jpeg";
+import heroClinicB from "@/assets/IMG_9269.optimized.jpg";
 
 const HeroSection = () => {
   return (
@@ -21,22 +21,22 @@ const HeroSection = () => {
             </div>
 
             <span className="mb-2 block text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-              {clinicInfo.clinicName} a Rabat Hay Riad
+              {clinicInfo.clinicName} à Rabat Hay Riad
             </span>
 
             <h1 className="font-heading text-4xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              Le dentiste ou vous venez <span className="text-gradient-primary">sans stress</span>
+              Le dentiste où vous venez <span className="text-gradient-primary">sans stress</span>
             </h1>
 
             <p className="max-w-lg text-lg text-muted-foreground">
-              Une prise en charge humaine, rassurante et professionnelle du debut a la fin.
+              Une prise en charge humaine, rassurante et professionnelle du début à la fin.
             </p>
 
             <ul className="space-y-3">
               {[
-                "Laureat de la faculte de medecine dentaire de Rabat - Universite Mohamed V",
-                "Diplome Universitaire d'implantologie - Universite Internationale de Rabat",
-                "10 ans d'experience et un suivi personnalise",
+                "Lauréat de la faculté de médecine dentaire de Rabat - Université Mohamed V",
+                "Diplôme Universitaire d'implantologie - Université Internationale de Rabat",
+                "10 ans d'expérience et un suivi personnalisé",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-foreground">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -54,7 +54,7 @@ const HeroSection = () => {
                 ))}
               </div>
               <span>
-                <strong className="text-foreground">4.9/5</strong> - base sur 237 avis Google
+                <strong className="text-foreground">4.9/5</strong> - basé sur 91 avis Google
               </span>
             </div>
 
@@ -66,17 +66,17 @@ const HeroSection = () => {
                 onClick={() => {
                   trackButtonClick({
                     buttonId: "hero-cta-booking",
-                    buttonText: "Reserver ma consultation",
+                    buttonText: "Réserver ma consultation",
                     buttonLocation: "hero",
                     actionType: "scroll_to_booking",
                     destination: "#booking",
                   });
                   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                aria-label={`Prendre RDV a ${clinicInfo.clinicName}`}
+                aria-label={`Prendre RDV à ${clinicInfo.clinicName}`}
               >
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                Reserver ma consultation
+                Réserver ma consultation
               </Button>
 
               <Button
@@ -103,7 +103,6 @@ const HeroSection = () => {
                   Prendre RDV par appel
                 </a>
               </Button>
-
             </div>
           </div>
 
@@ -113,7 +112,7 @@ const HeroSection = () => {
                 <div className="absolute inset-0 scale-105 rotate-3 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5" />
                 <img
                   src={heroPortrait}
-                  alt="Patiente dans la clinique dentaire a Rabat"
+                  alt="Patiente dans la clinique dentaire à Rabat"
                   className="relative aspect-[4/5] w-full rounded-3xl object-cover shadow-card"
                   width={1080}
                   height={1350}
@@ -138,7 +137,7 @@ const HeroSection = () => {
               <div className="grid gap-4">
                 <img
                   src={heroClinicA}
-                  alt="Salle de soin moderne a Rabat"
+                  alt="Salle de soin moderne à Rabat"
                   className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
                   width={1200}
                   height={900}
@@ -147,7 +146,7 @@ const HeroSection = () => {
                 />
                 <img
                   src={heroClinicB}
-                  alt="Interieur du cabinet dentaire a Hay Riad"
+                  alt="Intérieur du cabinet dentaire à Hay Riad"
                   className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
                   width={1200}
                   height={900}

@@ -1,51 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
-import { clinicInfo } from "@/lib/clinic-info";
 import clinicMain from "@/assets/cabinet-dentaire-hay-riad-rabat.optimized.jpg";
-import clinicDetailA from "@/assets/IMG_9157.jpeg";
+import clinicDetailA from "@/assets/IMG_9157.optimized.jpg";
 import clinicDetailB from "@/assets/IMG_9279.optimized.jpg";
-import clinicDetailC from "@/assets/IMG_9135.jpeg";
+import clinicDetailC from "@/assets/IMG_9144.optimized.jpg";
 
 const gallery = [
   {
     src: clinicDetailA,
-    alt: "Fauteuil de soin et equipement de la clinique dentaire",
+    alt: "Fauteuil de soin et équipement de la clinique dentaire",
   },
   {
     src: clinicDetailB,
-    alt: "Espace interieur du cabinet dentaire a Rabat",
+    alt: "Espace intérieur du cabinet dentaire à Rabat",
   },
   {
     src: clinicDetailC,
-    alt: "Vue detaillee d'une salle de traitement moderne",
+    alt: "Vue détaillée d'une salle de traitement moderne",
   },
 ];
 
 const reasons = [
   {
-    title: "Des soins reellement sans douleur",
+    title: "Des soins réellement sans douleur",
     description:
-      "Chaque geste est maitrise pour garantir votre confort. Meme les patients les plus anxieux ressortent surpris : ils n’ont rien ressenti.",
+      "Chaque geste est maîtrisé pour garantir votre confort. Même les patients les plus anxieux ressortent surpris : ils n'ont rien ressenti.",
   },
   {
-    title: "Vous comprenez exactement ce qu’on fait",
+    title: "Vous comprenez exactement ce qu'on fait",
     description:
-      "On prend le temps de vous expliquer chaque etape simplement. Vous avancez en toute confiance, sans stress ni zone d’ombre.",
+      "On prend le temps de vous expliquer chaque étape simplement. Vous avancez en toute confiance, sans stress ni zone d'ombre.",
   },
   {
-    title: "Une prise en charge rapide, meme en urgence",
+    title: "Une prise en charge rapide, même en urgence",
     description:
-      "Douleur, infection, extraction, vous etes traite rapidement et efficacement. Pas d’attente inutile, pas de negligence.",
+      "Douleur, infection, extraction, vous êtes traité rapidement et efficacement. Pas d'attente inutile, pas de négligence.",
   },
   {
-    title: "Des resultats naturels et durables",
+    title: "Des résultats naturels et durables",
     description:
-      "Implants, couronnes, soins esthetiques, le travail est precis, discret et pense pour durer dans le temps.",
+      "Implants, couronnes, soins esthétiques : le travail est précis, discret et pensé pour durer dans le temps.",
   },
   {
-    title: "Une vraie ecoute, sans pression",
+    title: "Une vraie écoute, sans pression",
     description:
-      "Ici, vous n’etes jamais presse ni pousse a faire un soin. On vous conseille, vous decidez.",
+      "Ici, vous n'êtes jamais pressé ni poussé à faire un soin. On vous conseille, vous décidez.",
   },
 ];
 
@@ -57,7 +56,7 @@ const ClinicSection = () => {
           <div className="space-y-4">
             <img
               src={clinicMain}
-              alt="Clinique dentaire moderne a Rabat Hay Riad"
+              alt="Clinique dentaire moderne à Rabat Hay Riad"
               className="aspect-[4/3] w-full rounded-2xl object-cover object-[center_22%] shadow-card"
               loading="lazy"
               width={1920}
@@ -83,14 +82,17 @@ const ClinicSection = () => {
 
           <div className="space-y-5">
             <h2 className="font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-              Pourquoi nos patients ne changent plus de dentiste ?
+              Pourquoi nos patients restent chez Dr Fatih ?
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Une experience pensee pour rassurer, expliquer, soulager rapidement et offrir des soins qui durent.
+              Une expérience pensée pour rassurer, expliquer, soulager rapidement et offrir des soins qui durent.
             </p>
             <div className="space-y-4">
               {reasons.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-border bg-card/70 p-4 shadow-card">
+                <div
+                  key={item.title}
+                  className="gpu-smooth rounded-2xl border border-border bg-card/70 p-4 shadow-card transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1"
+                >
                   <h3 className="font-heading text-base font-bold text-foreground">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                 </div>
@@ -101,7 +103,7 @@ const ClinicSection = () => {
               onClick={() => {
                 trackButtonClick({
                   buttonId: "clinic-cta",
-                  buttonText: "Reserver ma consultation",
+                  buttonText: "Réserver ma consultation",
                   buttonLocation: "clinic",
                   actionType: "scroll_to_booking",
                   destination: "#booking",
@@ -109,7 +111,7 @@ const ClinicSection = () => {
                 document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Reserver ma consultation
+              Réserver ma consultation
             </Button>
           </div>
         </div>

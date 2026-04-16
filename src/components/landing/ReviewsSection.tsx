@@ -15,109 +15,109 @@ const googleReviews: ReviewItem[] = [
     name: "Youssef TADLI",
     meta: "Il y a un mois",
     rating: 5,
-    text: "J’ai consulte le Dr Fatih El Mehdi a Rabat en urgence pour une infection dentaire ayant necessite une extraction. Tout a ete parfait du debut a la fin. Le docteur explique clairement et l’intervention s’est tres bien passee.",
+    text: "J’ai consulté le Dr Fatih El Mehdi à Rabat en urgence pour une infection dentaire ayant nécessité une extraction. Tout a été parfait du début à la fin. Le docteur explique clairement et l’intervention s’est très bien passée.",
   },
   {
     name: "Rajae dahani",
     meta: "Il y a 3 mois",
     rating: 5,
-    text: "Excellent dentiste. Tres professionnel, a l’ecoute et surtout tres ponctuel, ce qui est rare et appreciable. Le cabinet est propre et l’accueil est de qualite. Je recommande vivement.",
+    text: "Excellent dentiste. Très professionnel, à l’écoute et surtout très ponctuel, ce qui est rare et appréciable. Le cabinet est propre et l’accueil est de qualité. Je recommande vivement.",
   },
   {
     name: "Nouhaila Ch",
     meta: "Il y a 4 mois",
     rating: 5,
-    text: "Je n’aurais jamais cru dire ca un jour, mais je suis detendue chez le dentiste. Dr Fatih est hyper pro, tres sympa et vraiment a l’ecoute. Il m’a fait oublier ma phobie. Service top, je recommande a 100 %.",
+    text: "Je n’aurais jamais cru dire ça un jour, mais je suis détendue chez le dentiste. Dr Fatih est hyper pro, très sympa et vraiment à l’écoute. Il m’a fait oublier ma phobie. Service top, je recommande à 100 %.",
   },
   {
     name: "Sofia Moatassim",
     meta: "Il y a 7 mois",
     rating: 5,
-    text: "Dr Fatih est un dentiste tres competent avec de vraies qualites humaines. Il prend le temps d’expliquer et de rassurer, surtout quand il sent l’anxiete du patient. Sa bienveillance fait toute la difference.",
+    text: "Dr Fatih est un dentiste très compétent avec de vraies qualités humaines. Il prend le temps d’expliquer et de rassurer, surtout quand il sent l’anxiété du patient. Sa bienveillance fait toute la différence.",
   },
   {
     name: "Basma Abdallah",
     meta: "Il y a 2 mois",
     rating: 5,
-    text: "Je recommande vivement Dr Fatih El Mehdi. Tres rassurant, professionnel et attentif, je me suis sentie en confiance du debut a la fin. Merci beaucoup pour votre travail.",
+    text: "Je recommande vivement Dr Fatih El Mehdi. Très rassurant, professionnel et attentif, je me suis sentie en confiance du début à la fin. Merci beaucoup pour votre travail.",
   },
   {
     name: "Fatima Ezzahrae Sassine",
     meta: "Il y a 7 mois",
     rating: 5,
-    text: "Un dentiste remarquable. Toujours a l’ecoute, patient et bienveillant. Les soins sont realises sans douleur, avec professionnalisme et une reelle competence. Je recommande les yeux fermes.",
+    text: "Un dentiste remarquable. Toujours à l’écoute, patient et bienveillant. Les soins sont réalisés sans douleur, avec professionnalisme et une réelle compétence. Je recommande les yeux fermés.",
   },
   {
     name: "Soumia Bouazouz",
     meta: "Il y a 6 mois",
     rating: 5,
-    text: "Excellente experience, le docteur est tres professionnel et explique tout clairement avant de commencer. Le cabinet est tres propre et les rendez-vous sont respectes.",
+    text: "Excellente expérience, le docteur est très professionnel et explique tout clairement avant de commencer. Le cabinet est très propre et les rendez-vous sont respectés.",
   },
   {
     name: "Fatima FADILI",
     meta: "Il y a 9 mois",
     rating: 5,
-    text: "J’ai eu recours aux services du Dr Mehdi Fatih pour une extraction de dent de sagesse. L’intervention a ete realisee avec une grande maitrise, de maniere simple et totalement indolore.",
+    text: "J’ai eu recours aux services du Dr Mehdi Fatih pour une extraction de dent de sagesse. L’intervention a été réalisée avec une grande maîtrise, de manière simple et totalement indolore.",
   },
   {
     name: "Boutaina Ziyout",
     meta: "Il y a un an",
     rating: 5,
-    text: "J’ai effectue plusieurs soins chez Dr Fatih et je ne peux que recommander. Il est tres competent, attentionne et d’une grande humanite. Loin de toute approche commerciale, il m’a donne de precieux conseils.",
+    text: "J’ai effectué plusieurs soins chez Dr Fatih et je ne peux que recommander. Il est très compétent, attentionné et d’une grande humanité. Loin de toute approche commerciale, il m’a donné de précieux conseils.",
   },
   {
     name: "Kenza Kechab",
     meta: "Il y a 2 ans",
     rating: 5,
-    text: "Un excellent docteur. Tres satisfaite du docteur Fatih qui a fait preuve d’un tres grand professionnalisme dans mon cas. Les soins sont de tres bonne qualite, sans douleur ni stress.",
+    text: "Un excellent docteur. Très satisfaite du docteur Fatih qui a fait preuve d’un très grand professionnalisme dans mon cas. Les soins sont de très bonne qualité, sans douleur ni stress.",
   },
   {
     name: "Dounia Bargach",
     meta: "Il y a un an",
     rating: 5,
-    text: "Je suis vraiment satisfaite de mon experience. Je redoutais un peu le rendez-vous au debut, mais au fil des seances, je me suis sentie en confiance. Le Dr a pris le temps de tout expliquer.",
+    text: "Je suis vraiment satisfaite de mon expérience. Je redoutais un peu le rendez-vous au début, mais au fil des séances, je me suis sentie en confiance. Le Dr a pris le temps de tout expliquer.",
   },
   {
     name: "Abdelouahab Agoumi",
     meta: "Il y a 3 ans",
     rating: 5,
-    text: "Le cabinet est equipe des dernieres technologies en matiere de soins dentaires et le dentiste est tres competent et professionnel. Il a pris le temps de m’expliquer chaque etape.",
+    text: "Le cabinet est équipé des dernières technologies en matière de soins dentaires et le dentiste est très compétent et professionnel. Il a pris le temps de m’expliquer chaque étape.",
   },
   {
     name: "Caterina De Nicolo",
     meta: "Il y a 3 ans",
     rating: 5,
-    text: "Je recommande vivement ce cabinet dentaire pour la qualite des soins. Venue en urgence pendant mes vacances au Maroc, j’ai trouve chez Dr Fatih un professionnalisme et un accueil excellents.",
+    text: "Je recommande vivement ce cabinet dentaire pour la qualité des soins. Venue en urgence pendant mes vacances au Maroc, j’ai trouvé chez Dr Fatih un professionnalisme et un accueil excellents.",
   },
   {
     name: "Karima Essaghir",
     meta: "Il y a 10 mois",
     rating: 5,
-    text: "J’ai apprecie les resultats de mes soins chez Dr Fatih. Experience agreable, docteur competent et cabinet propre et accueillant. Merci.",
+    text: "J’ai apprécié les résultats de mes soins chez Dr Fatih. Expérience agréable, docteur compétent et cabinet propre et accueillant. Merci.",
   },
   {
     name: "Adnane Naili",
     meta: "Il y a 10 mois",
     rating: 5,
-    text: "Accueil tres aimable. Dr Mehdi est a la fois tres professionnel, rassurant et surtout humain. Je n’ai absolument rien senti pendant les soins et les prix sont tres justes.",
+    text: "Accueil très aimable. Dr Mehdi est à la fois très professionnel, rassurant et surtout humain. Je n’ai absolument rien senti pendant les soins et les prix sont très justes.",
   },
   {
     name: "Saad Chouar",
     meta: "Il y a 2 ans",
     rating: 5,
-    text: "Je recommande vivement Dr Fatih pour son service de qualite, sa bienveillance et son ecoute. Mention speciale pour l’hygiene et la proprete du cabinet et des outils utilises.",
+    text: "Je recommande vivement Dr Fatih pour son service de qualité, sa bienveillance et son écoute. Mention spéciale pour l’hygiène et la propreté du cabinet et des outils utilisés.",
   },
   {
     name: "Mahdi Lafram",
     meta: "Il y a 11 mois",
     rating: 5,
-    text: "Dr Fatih est un excellent dentiste. Ponctuel, rigoureux et competent. Je le recommande vivement.",
+    text: "Dr Fatih est un excellent dentiste. Ponctuel, rigoureux et compétent. Je le recommande vivement.",
   },
   {
     name: "Salwa Benomar",
     meta: "Il y a un an",
     rating: 5,
-    text: "Un excellent dentiste, serieux et bienveillant. Le centre dentaire est tres agreable, l’equipe est tres professionnelle et le protocole d’hygiene est parfait.",
+    text: "Un excellent dentiste, sérieux et bienveillant. Le centre dentaire est très agréable, l’équipe est très professionnelle et le protocole d’hygiène est parfait.",
   },
   {
     name: "Houda Tahoune",
@@ -129,7 +129,7 @@ const googleReviews: ReviewItem[] = [
     name: "Khachfani Aziz",
     meta: "Il y a 5 jours",
     rating: 5,
-    text: "Je recommande vivement Dr. El Mehdi Fatih. Tres professionnel, a l’ecoute et rassurant, il prend le temps d’expliquer clairement toutes les options de traitement. On se sent vraiment en confiance.",
+    text: "Je recommande vivement Dr. El Mehdi Fatih. Très professionnel, à l’écoute et rassurant, il prend le temps d’expliquer clairement toutes les options de traitement. On se sent vraiment en confiance.",
   },
   {
     name: "chakir (chak_dady)",
@@ -141,19 +141,19 @@ const googleReviews: ReviewItem[] = [
     name: "aya yatim",
     meta: "Il y a une semaine",
     rating: 5,
-    text: "Docteur dynamique et tres professionnel. Il m’a rapidement mise a l’aise et a pris le temps de tout m’expliquer avant de commencer le travail.",
+    text: "Docteur dynamique et très professionnel. Il m’a rapidement mise à l’aise et a pris le temps de tout m’expliquer avant de commencer le travail.",
   },
   {
     name: "Fatimazohra Louji",
     meta: "Il y a un mois",
     rating: 5,
-    text: "Le Dr Fatih se distingue par sa competence, son professionnalisme, ses techniques modernes et sa facon rassurante de communiquer avec les patients.",
+    text: "Le Dr Fatih se distingue par sa compétence, son professionnalisme, ses techniques modernes et sa façon rassurante de communiquer avec les patients.",
   },
   {
     name: "Yousra ABROUD",
     meta: "Il y a un an",
     rating: 5,
-    text: "Dr. Fatih est un dentiste competent et attentif qui rend chaque visite agreable. Il combine expertise et bienveillance pour offrir une experience dentaire remarquable.",
+    text: "Dr. Fatih est un dentiste compétent et attentif qui rend chaque visite agréable. Il combine expertise et bienveillance pour offrir une expérience dentaire remarquable.",
   },
 ];
 
@@ -202,7 +202,7 @@ const ReviewsSection = () => {
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Une selection de vrais avis Google Maps changes automatiquement chaque semaine.
+            Une sélection de vrais avis Google Maps changés automatiquement chaque semaine.
           </p>
 
           <div className="mt-4 flex items-center justify-center gap-2">

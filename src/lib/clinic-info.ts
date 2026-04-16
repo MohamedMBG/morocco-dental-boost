@@ -1,7 +1,7 @@
 export const clinicInfo = {
   clinicName: "ORIS DENTAL CENTER",
   doctorName: "Dr EL MEHDI FATIH",
-  addressDisplay: "Angle Av. Al Araar et Av. Ben Barka, Residence Dounia A, Appt 12, 3eme etage, Hay Riad, Rabat 10100",
+  addressDisplay: "Angle Av. Al Araar et Av. Ben Barka, Résidence Dounia A, Appt 12, 3ème étage, Hay Riad, Rabat 10100",
   addressShort: "Angle Av. Al Araar et Av. Ben Barka, Hay Riad, Rabat 10100",
   mapsPlaceName: "Oris Dental Center - Dr Fatih El Mehdi - Dentiste Rabat",
   mapsPlaceId: "ChIJsLFiIuYzcRcRoNURAWiSMz8",
@@ -17,11 +17,11 @@ export const clinicInfo = {
   whatsappHref: "https://wa.me/212611979753",
   whatsappRdvHref: "https://wa.me/212611979753?text=Bonjour%2C%20je%20souhaite%20prendre%20RDV",
   appointmentEmail: "drfatihelmehdi@gmail.com",
-  hoursShort: "9h15 - 18h00",
-  hoursDetailed: "Lun - Ven : 9h15 - 18h00 | Sam : 9h15 - 13h00",
+  hoursShort: "09:00 - 18:00",
+  hoursDetailed: "Du lundi au vendredi : 09:00 - 18:00 | Samedi : 09:00 - 13:00",
   credentials: [
-    "Laureat de la faculte de medecine dentaire de Rabat - Universite Mohamed V",
-    "Diplome Universitaire d'implantologie - College of Health Sciences, Universite Internationale de Rabat",
-    "10 ans d'experience",
+    "Lauréat de la faculté de médecine dentaire de Rabat - Université Mohamed V",
+    "Diplôme Universitaire d'implantologie - College of Health Sciences, Université Internationale de Rabat",
+    "10 ans d'expérience",
   ],
 } as const;

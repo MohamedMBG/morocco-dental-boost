@@ -3,9 +3,10 @@ import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
 
 const quickLinks = [
-  { label: "Nos Soins Dentaires", href: "#services" },
-  { label: "Avis Patients", href: "#reviews" },
-  { label: "Prendre RDV", href: "#booking" },
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Avis", href: "/#reviews" },
+  { label: "Prendre RDV", href: "/#booking" },
 ];
 
 const Footer = () => {
@@ -25,8 +26,8 @@ const Footer = () => {
                 />
               </div>
               <p className="mt-4 max-w-md text-sm leading-6 text-trust-foreground/75">
-                Clinique dentaire a Rabat dirigee par {clinicInfo.doctorName}. Implantologie,
-                facettes, blanchiment dentaire et soins dentaires complets.
+                Clinique dentaire à Rabat dirigée par {clinicInfo.doctorName}. Implantologie, facettes, blanchiment
+                dentaire et soins dentaires complets.
               </p>
             </section>
 
@@ -100,19 +101,7 @@ const Footer = () => {
                 <ul className="space-y-3 text-sm text-trust-foreground/80">
                   {quickLinks.map((link) => (
                     <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="transition-colors hover:text-trust-foreground"
-                        onClick={() =>
-                          trackButtonClick({
-                            buttonId: `footer-nav-${link.href.replace("#", "")}`,
-                            buttonText: link.label,
-                            buttonLocation: "footer",
-                            actionType: "anchor_navigation",
-                            destination: link.href,
-                          })
-                        }
-                      >
+                      <a href={link.href} className="transition-colors hover:text-trust-foreground">
                         {link.label}
                       </a>
                     </li>
@@ -121,10 +110,10 @@ const Footer = () => {
               </nav>
 
               <div className="mt-6 border-t border-white/10 pt-4 text-sm text-trust-foreground/65">
-                <p>Clinique agreee par le Ministere de la Sante du Maroc</p>
+                <p>Clinique agréée par le Ministère de la Santé du Maroc</p>
                 <p className="mt-2 text-xs leading-5">
                   <span className="font-semibold text-trust-foreground/80">
-                    Dentiste a Rabat Hay Riad - {clinicInfo.doctorName}
+                    Dentiste à Rabat Hay Riad - {clinicInfo.doctorName}
                   </span>{" "}
                   - Implantologie, blanchiment, facettes
                 </p>
@@ -141,7 +130,7 @@ const Footer = () => {
                 loading="lazy"
                 decoding="async"
               />
-              <span>© 2026 ORIS DENTAL CENTER. Tous droits reserves.</span>
+              <span>(c) 2026 ORIS DENTAL CENTER. Tous droits réservés.</span>
             </div>
           </div>
         </div>

@@ -75,10 +75,10 @@ const BookingSection = () => {
       setPreferredDay("");
       setService("");
       setWebsite("");
-      toast.success("Votre demande a bien ete envoyee. Nous vous recontacterons rapidement.");
+      toast.success("Votre demande a bien été envoyée. Nous vous recontacterons rapidement.");
     } catch (error) {
       const message =
-        error instanceof Error ? error.message : "Une erreur est survenue. Merci de reessayer.";
+        error instanceof Error ? error.message : "Une erreur est survenue. Merci de réessayer.";
       toast.error(message);
     } finally {
       setIsSubmitting(false);
@@ -97,7 +97,7 @@ const BookingSection = () => {
             <div className="mb-6 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600 sm:text-sm">
                 <Flame className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
-                Places limitees cette semaine
+                Places limitées cette semaine
               </div>
 
               <h2 className="font-heading text-2xl font-extrabold leading-tight text-foreground sm:text-3xl md:text-4xl">
@@ -107,7 +107,7 @@ const BookingSection = () => {
 
               <p className="mt-2 flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted-foreground sm:text-base">
                 <Zap className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
-                Reponse garantie en moins de <strong className="text-foreground">30 minutes</strong> par notre equipe
+                Réponse garantie en moins de <strong className="text-foreground">30 minutes</strong> par notre équipe
               </p>
             </div>
 
@@ -141,7 +141,7 @@ const BookingSection = () => {
                 />
               </Field>
 
-              <Field label="Telephone / WhatsApp *" icon={Phone}>
+              <Field label="Téléphone / WhatsApp *" icon={Phone}>
                 <Input
                   id="booking-phone"
                   placeholder="Ex : 06 12 34 56 78"
@@ -152,16 +152,16 @@ const BookingSection = () => {
                   required
                   maxLength={20}
                   autoComplete="tel"
-                  aria-label="Numero de telephone"
+                  aria-label="Numéro de téléphone"
                 />
               </Field>
 
-              <Field label="Soin souhaite (optionnel)" icon={Stethoscope}>
+              <Field label="Soin souhaité (optionnel)" icon={Stethoscope}>
                 <Select value={service} onValueChange={setService}>
                   <SelectTrigger
                     id="booking-service"
                     className="h-12 border-border bg-secondary/50 text-base"
-                    aria-label="Soin souhaite"
+                    aria-label="Soin souhaité"
                   >
                     <SelectValue placeholder="Choisir un soin..." />
                   </SelectTrigger>
@@ -172,21 +172,21 @@ const BookingSection = () => {
                     <SelectItem value="Orthodontie">Orthodontie</SelectItem>
                     <SelectItem value="Chirurgie orale">Chirurgie orale</SelectItem>
                     <SelectItem value="Parodontologie">Parodontologie</SelectItem>
-                    <SelectItem value="Protheses dentaires">Protheses dentaires</SelectItem>
-                    <SelectItem value="Endodontie (devitalisation)">Endodontie (devitalisation)</SelectItem>
-                    <SelectItem value="Detartrage">Detartrage</SelectItem>
+                    <SelectItem value="Prothèses dentaires">Prothèses dentaires</SelectItem>
+                    <SelectItem value="Endodontie (dévitalisation)">Endodontie (dévitalisation)</SelectItem>
+                    <SelectItem value="Détartrage">Détartrage</SelectItem>
                     <SelectItem value="Urgences dentaires">Urgences dentaires</SelectItem>
                     <SelectItem value="Autre / Je ne sais pas">Autre / Je ne sais pas encore</SelectItem>
                   </SelectContent>
                 </Select>
               </Field>
 
-              <Field label="Jour prefere *" icon={Clock}>
+              <Field label="Jour préféré *" icon={Clock}>
                 <Select value={preferredDay} onValueChange={setPreferredDay}>
                   <SelectTrigger
                     id="booking-day"
                     className="h-12 border-border bg-secondary/50 text-base"
-                    aria-label="Jour prefere"
+                    aria-label="Jour préféré"
                   >
                     <SelectValue placeholder="Choisir un jour..." />
                   </SelectTrigger>
@@ -212,18 +212,17 @@ const BookingSection = () => {
                 <Send className="h-4 w-4 flex-shrink-0" />
                 {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
               </Button>
-
             </form>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Shield className="h-3.5 w-3.5" aria-hidden="true" />
-                Donnees securisees
+                Données sécurisées
               </span>
               <span aria-hidden="true">·</span>
               <span>Sans engagement</span>
               <span aria-hidden="true">·</span>
-              <span>Reponse en 30 min</span>
+              <span>Réponse en 30 min</span>
             </div>
           </div>
         </div>

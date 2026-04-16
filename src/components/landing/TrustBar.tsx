@@ -1,10 +1,10 @@
 import { Users, Award, MapPin, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "1 200+", label: "Patients traites" },
-  { icon: Award, value: "15+", label: "Ans d'experience" },
+  { icon: Users, value: "1 200+", label: "Patients traités" },
+  { icon: Award, value: "10+", label: "Ans d'expérience" },
   { icon: MapPin, value: "Rabat", label: "Centre-ville" },
-  { icon: Clock, value: "6j/7", label: "Disponibilite" },
+  { icon: Clock, value: "6j/7", label: "Disponibilité" },
 ];
 
 const TrustBar = () => {
