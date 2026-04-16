@@ -62,6 +62,7 @@ const ClinicSection = () => {
               width={1920}
               height={1440}
               decoding="async"
+              fetchPriority="low"
             />
 
             <div className="grid grid-cols-3 gap-3">
@@ -75,6 +76,7 @@ const ClinicSection = () => {
                   width={900}
                   height={900}
                   decoding="async"
+                  fetchPriority="low"
                 />
               ))}
             </div>

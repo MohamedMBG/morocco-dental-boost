@@ -25,7 +25,7 @@ const HeroSection = () => {
             </span>
 
             <h1 className="font-heading text-4xl font-extrabold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              Le dentiste où vous venez <span className="text-gradient-primary">sans stress</span>
+              Le dentiste à qui vous faites <span className="text-gradient-primary">enfin confiance</span>
             </h1>
 
             <p className="max-w-lg text-lg text-muted-foreground">
@@ -141,7 +141,8 @@ const HeroSection = () => {
                   className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
                   width={1200}
                   height={900}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
                 <img
@@ -150,7 +151,8 @@ const HeroSection = () => {
                   className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
                   width={1200}
                   height={900}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </div>
