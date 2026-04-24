@@ -169,9 +169,9 @@ const BookingSection = () => {
                     <SelectItem value="Implantologie">Implantologie</SelectItem>
                     <SelectItem value="Facettes">Facettes</SelectItem>
                     <SelectItem value="Blanchiment dentaire">Blanchiment dentaire</SelectItem>
+                    <SelectItem value="Parodontologie">Parodontologie</SelectItem>
                     <SelectItem value="Orthodontie">Orthodontie</SelectItem>
                     <SelectItem value="Chirurgie orale">Chirurgie orale</SelectItem>
-                    <SelectItem value="Parodontologie">Parodontologie</SelectItem>
                     <SelectItem value="Prothèses dentaires">Prothèses dentaires</SelectItem>
                     <SelectItem value="Endodontie (dévitalisation)">Endodontie (dévitalisation)</SelectItem>
                     <SelectItem value="Détartrage">Détartrage</SelectItem>

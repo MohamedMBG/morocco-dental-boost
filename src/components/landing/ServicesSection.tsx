@@ -1,4 +1,4 @@
-import { Sparkles, Shield, Smile, Zap, ScanFace, CalendarDays } from "lucide-react";
+import { Activity, Sparkles, Shield, Smile, Zap, ScanFace, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
 
@@ -17,6 +17,11 @@ const services = [
     icon: Sparkles,
     title: "Blanchiment dentaire",
     desc: "Éclaircissement du sourire avec un protocole professionnel pour un résultat harmonieux.",
+  },
+  {
+    icon: Activity,
+    title: "Parodontologie",
+    desc: "Soins des gencives pour traiter l'inflammation, les saignements et préserver les dents.",
   },
   {
     icon: Smile,
@@ -44,7 +49,7 @@ const ServicesSection = () => {
           </h2>
           <p className="mx-auto mt-3 max-w-md px-2 text-sm leading-relaxed text-muted-foreground md:px-0 md:text-base">
             Services principaux : implantologie, facettes, blanchiment dentaire,
-            orthodontie et urgences dentaires.
+            parodontologie, orthodontie et urgences dentaires.
           </p>
         </div>
 
