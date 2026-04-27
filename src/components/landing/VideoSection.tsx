@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Play, Pause } from "lucide-react";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import clinicTourVideo from "@/assets/0604.mp4";
+import clinicTourVideo from "@/assets/0604.compatible.mp4";
 import clinicTourPoster from "@/assets/IMG_9279.optimized.jpg";
 
 const VideoSection = () => {

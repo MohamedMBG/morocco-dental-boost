@@ -157,30 +157,34 @@ const googleReviews: ReviewItem[] = [
   },
 ];
 
-const REVIEWS_PER_WEEK = 6;
+const REVIEWS_TO_SHOW = 6;
 
-const getWeekSeed = () => {
-  const now = new Date();
-  const startOfYear = new Date(now.getFullYear(), 0, 1);
-  const daysSinceStart = Math.floor((now.getTime() - startOfYear.getTime()) / 86400000);
-  return now.getFullYear() * 100 + Math.ceil((daysSinceStart + startOfYear.getDay() + 1) / 7);
+const getReviewAgeInDays = (meta: string) => {
+  const normalizedMeta = meta.toLowerCase();
+  const valueMatch = normalizedMeta.match(/\d+/);
+  const value = valueMatch ? Number(valueMatch[0]) : 1;
+
+  if (normalizedMeta.includes("jour")) return value;
+  if (normalizedMeta.includes("semaine")) return value * 7;
+  if (normalizedMeta.includes("mois")) return value * 30;
+  if (normalizedMeta.includes("an")) return value * 365;
+
+  return Number.MAX_SAFE_INTEGER;
 };
 
-const getWeeklyReviews = () => {
-  const seed = getWeekSeed();
-  const ranked = googleReviews
+const getRecentReviews = () => {
+  return googleReviews
     .map((review, index) => ({
       review,
-      score: (index * 37 + seed * 17) % 997,
+      ageInDays: getReviewAgeInDays(review.meta),
+      index,
     }))
-    .sort((a, b) => a.score - b.score)
-    .slice(0, REVIEWS_PER_WEEK)
+    .sort((a, b) => a.ageInDays - b.ageInDays || a.index - b.index)
+    .slice(0, REVIEWS_TO_SHOW)
     .map(({ review }) => review);
-
-  return ranked;
 };
 
-const weeklyReviews = getWeeklyReviews();
+const recentReviews = getRecentReviews();
 
 const ReviewsSection = () => {
   return (
@@ -202,7 +206,7 @@ const ReviewsSection = () => {
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Une sélection de vrais avis Google Maps changés automatiquement chaque semaine.
+            Une sélection de vrais avis Google Maps, avec les plus récents affichés en priorité.
           </p>
 
           <div className="mt-4 flex items-center justify-center gap-2">
@@ -216,7 +220,7 @@ const ReviewsSection = () => {
         </div>
 
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {weeklyReviews.map((review, i) => (
+          {recentReviews.map((review, i) => (
             <motion.article
               key={review.name}
               initial={{ opacity: 0, y: 16 }}
