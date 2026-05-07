@@ -1,12 +1,13 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 import { trackButtonClick } from "@/lib/analytics";
+import { withBasePath } from "@/lib/base-path";
 import { clinicInfo } from "@/lib/clinic-info";
 
 const quickLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Avis", href: "/#reviews" },
-  { label: "Prendre RDV", href: "/#booking" },
+  { label: "Accueil", href: withBasePath("/") },
+  { label: "Services", href: withBasePath("/#services") },
+  { label: "Avis", href: withBasePath("/#reviews") },
+  { label: "Prendre RDV", href: withBasePath("/#booking") },
 ];
 
 const Footer = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
             <section className="md:pr-6">
               <div className="flex justify-center md:justify-start">
                 <img
-                  src="/title.png"
+                  src={withBasePath("/title.png")}
                   alt={`${clinicInfo.clinicName} title`}
                   className="h-auto w-full max-w-[280px] object-contain md:max-w-[340px]"
                   loading="lazy"
@@ -124,7 +125,7 @@ const Footer = () => {
           <div className="mt-8 border-t border-white/10 pt-5 text-center text-sm text-trust-foreground/55 md:flex md:items-center md:justify-between md:text-left">
             <div className="flex items-center justify-center gap-3 md:justify-start">
               <img
-                src="/logo%201.png"
+                src={withBasePath("/logo%201.png")}
                 alt={`${clinicInfo.clinicName} logo`}
                 className="h-11 w-11 object-contain"
                 loading="lazy"

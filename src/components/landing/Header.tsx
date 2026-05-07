@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
+import { withBasePath } from "@/lib/base-path";
 import { clinicInfo } from "@/lib/clinic-info";
 
 const navItems = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Avis", href: "/#reviews" },
-  { label: "RDV", href: "/#booking" },
+  { label: "Accueil", href: withBasePath("/") },
+  { label: "Services", href: withBasePath("/#services") },
+  { label: "Avis", href: withBasePath("/#reviews") },
+  { label: "RDV", href: withBasePath("/#booking") },
 ];
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between gap-4">
         <Link to="/" className="flex items-center">
           <img
-            src="/logo%201.png"
+            src={withBasePath("/logo%201.png")}
             alt={`${clinicInfo.clinicName} logo`}
             className="h-20 w-auto object-contain"
             loading="eager"

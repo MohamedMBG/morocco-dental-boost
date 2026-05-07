@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { trackFormSubmit } from "@/lib/analytics";
+import { withBasePath } from "@/lib/base-path";
 import { clinicInfo } from "@/lib/clinic-info";
 
 const Field = ({
@@ -44,7 +45,7 @@ const BookingSection = () => {
     try {
       setIsSubmitting(true);
 
-      const response = await fetch("/api/book-appointment.php", {
+      const response = await fetch(withBasePath("/api/book-appointment.php"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
