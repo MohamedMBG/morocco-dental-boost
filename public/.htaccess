@@ -1,3 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /landing_page/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.js$ /landing_page/assets/index-D8udcjt_.js [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.css$ /landing_page/assets/index-Cbc2Fncw.css [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /landing_page/index.html [L]
+</IfModule>
+
 <IfModule mod_headers.c>
   <Files "index.html">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
