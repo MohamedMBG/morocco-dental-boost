@@ -17,8 +17,8 @@ const GoogleMapSection = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-5">
-          <div className="h-[350px] overflow-hidden rounded-2xl border border-border shadow-card md:col-span-3 md:h-[420px]">
+        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-[3fr_2fr]">
+          <div className="h-[260px] min-w-0 overflow-hidden rounded-2xl border border-border shadow-card md:h-[360px]">
             <iframe
               src={clinicInfo.mapsEmbedHref}
               width="100%"
@@ -31,7 +31,7 @@ const GoogleMapSection = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-card md:col-span-2">
+          <div className="flex min-w-0 flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-card">
             <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">

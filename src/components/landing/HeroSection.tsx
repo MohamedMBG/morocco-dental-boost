@@ -1,4 +1,4 @@
-import { Check, Phone, Star, Flame, CalendarDays } from "lucide-react";
+import { Check, Phone, Star, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackButtonClick } from "@/lib/analytics";
 import { clinicInfo } from "@/lib/clinic-info";
@@ -15,11 +15,6 @@ const HeroSection = () => {
       <div className="container py-12 md:py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-semibold text-red-600">
-              <Flame className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-              3 jours de RDV encore disponibles cette semaine
-            </div>
-
             <span className="mb-2 block text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               {clinicInfo.clinicName} à Rabat Hay Riad
             </span>

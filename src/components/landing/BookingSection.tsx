@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Shield, Flame, Zap, User, Phone, Stethoscope, Clock } from "lucide-react";
+import { Send, Shield, Zap, User, Phone, Stethoscope, Clock, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -33,6 +33,7 @@ const BookingSection = () => {
   const [service, setService] = useState("");
   const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,6 +45,12 @@ const BookingSection = () => {
 
     try {
       setIsSubmitting(true);
+
+      trackFormSubmit({
+        formName: "booking_email_form",
+        buttonId: "booking-submit",
+        serviceName: service || undefined,
+      });
 
       const response = await fetch(withBasePath("/api/book-appointment.php"), {
         method: "POST",
@@ -65,18 +72,12 @@ const BookingSection = () => {
         throw new Error(data?.message || "Impossible d'envoyer votre demande pour le moment.");
       }
 
-      trackFormSubmit({
-        formName: "booking_email_form",
-        buttonId: "booking-submit",
-        serviceName: service || undefined,
-      });
-
       setName("");
       setPhone("");
       setPreferredDay("");
       setService("");
       setWebsite("");
-      toast.success("Votre demande a bien été envoyée. Nous vous recontacterons rapidement.");
+      setIsSuccess(true);
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Une erreur est survenue. Merci de réessayer.";
@@ -95,12 +96,19 @@ const BookingSection = () => {
       <div className="container px-4 sm:px-6">
         <div className="mx-auto max-w-lg">
           <div className="rounded-2xl border border-border bg-card p-5 shadow-card sm:p-8 md:rounded-3xl md:p-10">
-            <div className="mb-6 text-center">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600 sm:text-sm">
-                <Flame className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
-                Places limitées cette semaine
+            {isSuccess ? (
+              <div className="flex flex-col items-center justify-center gap-4 py-8 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                  <CheckCircle2 className="h-9 w-9 text-green-600" aria-hidden="true" />
+                </div>
+                <h2 className="font-heading text-2xl font-extrabold text-foreground">Demande envoyée !</h2>
+                <p className="max-w-xs text-muted-foreground">
+                  Votre demande de RDV a bien été reçue. Notre équipe vous recontactera rapidement.
+                </p>
               </div>
-
+            ) : (
+            <>
+            <div className="mb-6 text-center">
               <h2 className="font-heading text-2xl font-extrabold leading-tight text-foreground sm:text-3xl md:text-4xl">
                 Prendre
                 <br className="sm:hidden" /> RDV
@@ -225,6 +233,8 @@ const BookingSection = () => {
               <span aria-hidden="true">·</span>
               <span>Réponse en 30 min</span>
             </div>
+            </>
+            )}
           </div>
         </div>
       </div>
