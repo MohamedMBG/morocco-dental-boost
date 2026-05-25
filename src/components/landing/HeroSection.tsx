@@ -9,10 +9,10 @@ import heroClinicB from "@/assets/IMG_9269.optimized.jpg";
 const HeroSection = () => {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 pt-16"
+      className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10"
       aria-label={`Section principale - ${clinicInfo.clinicName} Rabat`}
     >
-      <div className="container py-12 md:py-20">
+      <div className="container pt-4 pb-12 md:pt-8 md:pb-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="space-y-6">
             <span className="mb-2 block text-sm font-semibold uppercase tracking-[0.22em] text-primary">
