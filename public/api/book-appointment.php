@@ -11,17 +11,34 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $rootPath = dirname(__DIR__, 2);
-$configPath = $rootPath . '/mail-config.php';
-$exampleConfigPath = $rootPath . '/mail-config.example.php';
 
-if (!file_exists($configPath)) {
-    if (file_exists($exampleConfigPath)) {
-        $configPath = $exampleConfigPath;
-    } else {
-        http_response_code(500);
-        echo json_encode(['message' => "Configuration email manquante sur le serveur."]);
-        exit;
+function resolve_config_path(string $rootPath): ?string
+{
+    $configuredPath = trim((string) getenv('MAIL_CONFIG_PATH'));
+
+    $candidates = array_filter([
+        $configuredPath !== '' ? $configuredPath : null,
+        $rootPath . '/mail-config.php',
+        dirname($rootPath) . '/mail-config.php',
+        dirname($rootPath, 2) . '/mail-config.php',
+        $rootPath . '/mail-config.example.php',
+    ]);
+
+    foreach ($candidates as $candidate) {
+        if (is_file($candidate) && is_readable($candidate)) {
+            return $candidate;
+        }
     }
+
+    return null;
+}
+
+$configPath = resolve_config_path($rootPath);
+
+if ($configPath === null) {
+    http_response_code(500);
+    echo json_encode(['message' => "Configuration email manquante sur le serveur."]);
+    exit;
 }
 
 $config = require $configPath;
