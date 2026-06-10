@@ -3,9 +3,9 @@
   RewriteBase /landing_page/
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.js$ /landing_page/assets/index-D8udcjt_.js [L]
+  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.js$ /landing_page/assets/index-D4c4yJbd.js [L]
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.css$ /landing_page/assets/index-Cbc2Fncw.css [L]
+  RewriteRule ^assets/index-[A-Za-z0-9_-]+\.css$ /landing_page/assets/index-C_lAnRhV.css [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /landing_page/index.html [L]

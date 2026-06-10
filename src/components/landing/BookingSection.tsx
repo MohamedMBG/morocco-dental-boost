@@ -66,9 +66,11 @@ const BookingSection = () => {
         }),
       });
 
-      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+      const data = (await response.json().catch(() => null)) as
+        | { success?: boolean; message?: string }
+        | null;
 
-      if (!response.ok) {
+      if (!response.ok || data?.success !== true) {
         throw new Error(data?.message || "Impossible d'envoyer votre demande pour le moment.");
       }
 
