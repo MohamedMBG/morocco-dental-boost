@@ -47,6 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['health'])) {
 
     if ($configPath !== null) {
         $healthConfig = require $configPath;
+        if (is_array($healthConfig)) {
+            $healthConfig = with_default_booking_config($healthConfig);
+        }
+
         $health['bookingTransport'] = is_array($healthConfig) ? ($healthConfig['booking_transport'] ?? null) : null;
         $health['hasSheetWebhookUrl'] = is_array($healthConfig) && trim((string) ($healthConfig['sheet_webhook_url'] ?? '')) !== '';
         $health['hasSheetWebhookSecret'] = is_array($healthConfig) && trim((string) ($healthConfig['sheet_webhook_secret'] ?? '')) !== '';
@@ -77,6 +81,8 @@ if (!is_array($config)) {
     echo json_encode(['message' => "Configuration de reservation invalide."]);
     exit;
 }
+
+$config = with_default_booking_config($config);
 
 $rawBody = file_get_contents('php://input');
 $payload = json_decode($rawBody ?: '', true);
@@ -148,6 +154,27 @@ function clean_input(string $value): string
 function text_length(string $value): int
 {
     return function_exists('mb_strlen') ? mb_strlen($value) : strlen($value);
+}
+
+function with_default_booking_config(array $config): array
+{
+    if (trim((string) ($config['booking_transport'] ?? '')) === '') {
+        $config['booking_transport'] = 'sheet_webhook';
+    }
+
+    if (trim((string) ($config['sheet_webhook_url'] ?? '')) === '') {
+        $config['sheet_webhook_url'] = 'https://script.google.com/macros/s/AKfycbyVfeqnwPGaQaY0-kW54orko1dKn7LBvbMmX7e8xsKgdzJ5cbHggYOXTc9cJY42-Qf3Mg/exec';
+    }
+
+    if (trim((string) ($config['sheet_webhook_secret'] ?? '')) === '') {
+        $config['sheet_webhook_secret'] = 'morocco-dental-bookings-2026-06-03-r7Hk2Qm9Lp4X';
+    }
+
+    if (!array_key_exists('curl_ssl_verify', $config)) {
+        $config['curl_ssl_verify'] = false;
+    }
+
+    return $config;
 }
 
 function enforce_rate_limit(): void
